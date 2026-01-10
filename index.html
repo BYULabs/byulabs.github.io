@@ -1,0 +1,802 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ituStudio - BYU Software Development Hub</title>
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='75' fill='%23002E5C'>⚑</text></svg>">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        'byu-navy': '#002E5D',
+                        'byu-royal': '#0047BA',
+                        'byu-light-blue': '#BDD6E6',
+                        'byu-slate': '#7C878E',
+                        'byu-light-gray': '#C7C9C7',
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-15px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-gradient {
+            background: linear-gradient(135deg, #002E5D 0%, #0047BA 50%, #0047BA 100%);
+        }
+        .card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .card-hover:hover {
+            transform: translateY(-12px) scale(1.03);
+            box-shadow: 0 25px 50px -12px rgba(0, 46, 92, 0.3);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #002E5D 0%, #0047BA 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        html.dark .gradient-text {
+            background: linear-gradient(135deg, #BDD6E6 0%, #FFFFFF 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .cougar-emoji {
+            font-size: 4rem;
+            animation: bounce 2s infinite;
+        }
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        .project-card {
+            background: white;
+            border-left: 4px solid #002E5D;
+            transition: all 0.3s ease;
+        }
+        .project-card:hover {
+            border-left-color: #0047BA;
+            transform: translateX(8px);
+            box-shadow: 0 10px 30px rgba(0, 46, 92, 0.2);
+        }
+        /* Enhanced Header Styles */
+        header {
+            background: linear-gradient(90deg, rgba(0,46,93,0.98) 0%, rgba(0,71,186,0.95) 100%);
+            box-shadow: 0 4px 20px rgba(0, 46, 93, 0.3);
+        }
+        .header-top {
+            font-size: 0.8rem;
+            letter-spacing: 0.5px;
+            opacity: 0.9;
+        }
+        .header-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+        }
+        .logo-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 12px;
+            padding: 6px 12px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            backdrop-filter: blur(10px);
+        }
+        .nav-link-group {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .nav-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(255, 255, 255, 0.15);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            color: #FFFFFF;
+            padding: 8px 14px;
+            border-radius: 24px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        .nav-badge:hover {
+            background: rgba(255, 255, 255, 0.25);
+            border-color: #FFFFFF;
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
+        }
+        .nav-badge i {
+            font-size: 1.2rem;
+        }
+        .header-accent {
+            width: 3px;
+            height: 32px;
+            background: linear-gradient(180deg, #0047BA 0%, #002E5D 100%);
+            border-radius: 2px;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-900 dark:bg-byu-navy dark:text-white transition-colors duration-300">
+    <!-- Header Top Bar -->
+    <div class="bg-gradient-to-r from-byu-navy via-byu-royal to-byu-royal text-white text-center py-3 header-top">
+        <div class="flex items-center justify-center space-x-6 flex-wrap">
+            <span>📍 Brigham Young University | Provo, Utah</span>
+            <span class="hidden sm:inline">•</span>
+            <span class="hidden sm:inline">🏫 College of Physical and Mathematical Sciences</span>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="text-white py-6 px-8 flex justify-between items-center sticky top-0 z-50">
+        <div class="flex items-center space-x-4 flex-1">
+            <!-- BYU Logo -->
+            <img src="images/byu-logo.png" alt="BYU Cougar Logo" class="h-16 object-contain">
+            
+            <!-- Yellow Accent Line -->
+            <div class="header-accent"></div>
+            
+            <!-- Logo Text -->
+            <div class="flex flex-col">
+                <h1 class="text-3xl font-bold flex items-center space-x-2">
+                    <span>ituStudio</span>
+                </h1>
+                <div class="flex items-center space-x-2 mt-1">
+                    <span class="logo-badge">BYU Software Dev</span>
+                    <span class="text-xs opacity-75">• Software Development Program</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Main Navigation -->
+        <nav class="hidden lg:flex items-center space-x-8 flex-1 justify-center px-8">
+            <a href="#about" class="text-white/90 hover:text-yellow-300 transition-colors font-medium">About</a>
+            <a href="#projects" class="text-white/90 hover:text-yellow-300 transition-colors font-medium">Projects</a>
+            <a href="#skills" class="text-white/90 hover:text-yellow-300 transition-colors font-medium">Skills</a>
+            <div class="w-px h-6 bg-white/20"></div>
+            <a href="https://byu.edu" target="_blank" class="nav-badge" title="BYU Main Website">
+                <span>🏫</span>
+                <span>BYU.edu</span>
+            </a>
+            <a href="https://engineering.byu.edu" target="_blank" class="nav-badge" title="Engineering College">
+                <span>⚙️</span>
+                <span>Engineering</span>
+            </a>
+        </nav>
+
+        <!-- Right Side Actions -->
+        <div class="flex items-center space-x-4">
+            <a href="https://github.com/ituStudio" target="_blank" class="hidden md:inline-block bg-byu-royal hover:bg-byu-navy text-white px-5 py-2 rounded-full font-semibold transition-all transform hover:scale-105">
+                <i data-feather="github" class="inline w-4 h-4 mr-2"></i>GitHub
+            </a>
+            <button id="themeToggle" class="p-3 rounded-full bg-white/10 hover:bg-white/20 transition-colors">
+                <i data-feather="moon" class="hidden dark:block w-5 h-5"></i>
+                <i data-feather="sun" class="dark:hidden w-5 h-5"></i>
+            </button>
+            <button class="lg:hidden p-2 rounded-lg bg-white/10 hover:bg-white/20" id="mobileMenuBtn">
+                <i data-feather="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="hidden lg:hidden bg-gradient-to-b from-byu-royal to-byu-navy text-white p-6 space-y-4 border-b border-white/10">
+        <a href="#about" class="block py-2 hover:text-yellow-300 transition-colors">📖 About</a>
+        <a href="#projects" class="block py-2 hover:text-yellow-300 transition-colors">🚀 Projects</a>
+        <a href="#skills" class="block py-2 hover:text-yellow-300 transition-colors">💻 Skills</a>
+        <div class="h-px bg-white/10 my-4"></div>
+        <a href="https://byu.edu" target="_blank" class="block py-2 hover:text-yellow-300 transition-colors">🏫 BYU Website</a>
+        <a href="https://engineering.byu.edu" target="_blank" class="block py-2 hover:text-yellow-300 transition-colors">⚙️ Engineering College</a>
+        <a href="https://github.com/ituStudio" target="_blank" class="block py-2 bg-byu-royal text-white px-4 rounded-lg font-semibold hover:bg-byu-navy">GitHub Organization</a>
+    </div>
+    <!-- Hero Section -->
+    <section class="hero-gradient text-white py-32 relative overflow-hidden">
+        <div class="absolute inset-0 bg-black/10"></div>
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="max-w-5xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h1 class="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+                            Welcome to<br/><span class="text-byu-royal">ituStudio</span>
+                        </h1>
+                        <p class="text-xl md:text-2xl mb-8 opacity-90 leading-relaxed">
+                            Your hub for innovative software development projects as a BYU student. Explore my portfolio, assignments, and collaborative work from my Software Development program.
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-4">
+                            <a href="#projects" class="bg-white text-byu-navy px-8 py-4 rounded-xl font-semibold hover:bg-gray-100 transition-all transform hover:scale-105 shadow-2xl flex items-center justify-center space-x-2">
+                                <span>Explore Projects</span>
+                                <i data-feather="arrow-down" class="w-5 h-5"></i>
+                            </a>
+                            <a href="https://github.com/ituStudio" target="_blank" class="border-2 border-white/50 bg-white/10 backdrop-blur-sm text-white px-8 py-4 rounded-xl font-semibold hover:bg-white/20 transition-all transform hover:scale-105 flex items-center justify-center space-x-2">
+                                <i data-feather="github" class="w-5 h-5"></i>
+                                <span>GitHub Organization</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="flex justify-center items-center relative">
+                        <div class="absolute inset-0 bg-gradient-to-r from-byu-royal/20 to-transparent rounded-full blur-3xl"></div>
+                        <img src="images/byu-cougars-logo.png" alt="BYU Cougar Logo" class="h-96 w-auto object-contain relative z-10 drop-shadow-2xl hover:scale-110 transition-transform duration-300">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white/5 to-transparent"></div>
+    </section>
+    <!-- Stats Section -->
+    <section class="py-20 bg-white dark:bg-byu-navy relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-byu-light-blue/10 to-transparent rounded-full -translate-x-1/2 -translate-y-1/2 dark:from-byu-royal/5"></div>
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="animate-float bg-gradient-to-br from-byu-navy/5 to-byu-royal/5 dark:from-byu-royal/20 dark:to-byu-royal/10 rounded-2xl p-8 text-center border border-byu-navy/10 dark:border-byu-royal/20">
+                    <div class="text-5xl md:text-6xl font-bold gradient-text mb-3">20+</div>
+                    <div class="text-sm font-semibold text-gray-600 dark:text-byu-light-blue uppercase tracking-wide">Projects Built</div>
+                    <p class="text-xs text-gray-500 dark:text-white/60 mt-2">Web, mobile & backend</p>
+                </div>
+                <div class="animate-float bg-gradient-to-br from-byu-navy/5 to-byu-royal/5 dark:from-byu-royal/20 dark:to-byu-royal/10 rounded-2xl p-8 text-center border border-byu-navy/10 dark:border-byu-royal/20" style="animation-delay: 0.2s;">
+                    <div class="text-5xl md:text-6xl font-bold gradient-text mb-3">100%</div>
+                    <div class="text-sm font-semibold text-gray-600 dark:text-byu-light-blue uppercase tracking-wide">Passing Grades</div>
+                    <p class="text-xs text-gray-500 dark:text-white/60 mt-2">Coursework & projects</p>
+                </div>
+                <div class="animate-float bg-gradient-to-br from-byu-navy/5 to-byu-royal/5 dark:from-byu-royal/20 dark:to-byu-royal/10 rounded-2xl p-8 text-center border border-byu-navy/10 dark:border-byu-royal/20" style="animation-delay: 0.4s;">
+                    <div class="text-5xl md:text-6xl font-bold gradient-text mb-3">🐻</div>
+                    <div class="text-sm font-semibold text-gray-600 dark:text-byu-light-blue uppercase tracking-wide">BYU Cougar</div>
+                    <p class="text-xs text-gray-500 dark:text-white/60 mt-2">Provo, Utah</p>
+                </div>
+                <div class="animate-float bg-gradient-to-br from-byu-navy/5 to-byu-royal/5 dark:from-byu-royal/20 dark:to-byu-royal/10 rounded-2xl p-8 text-center border border-byu-navy/10 dark:border-byu-royal/20" style="animation-delay: 0.6s;">
+                    <div class="text-5xl md:text-6xl font-bold gradient-text mb-3">♾️</div>
+                    <div class="text-sm font-semibold text-gray-600 dark:text-byu-light-blue uppercase tracking-wide">Always Learning</div>
+                    <p class="text-xs text-gray-500 dark:text-white/60 mt-2">New tech daily</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- About Section -->
+    <section id="about" class="py-24 bg-gray-50 dark:bg-byu-navy relative overflow-hidden">
+        <div class="absolute bottom-0 right-0 w-96 h-96 bg-gradient-to-br from-byu-royal/10 to-transparent rounded-full translate-x-1/3 translate-y-1/3 dark:from-byu-royal/5"></div>
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="text-center mb-16">
+                <div class="inline-block mb-4">
+                    <span class="inline-block bg-byu-royal/10 dark:bg-byu-royal/20 text-byu-royal px-4 py-2 rounded-full text-sm font-semibold">ABOUT ME</span>
+                </div>
+                <h2 class="text-5xl md:text-6xl font-bold text-center mb-6 gradient-text">Building the Future</h2>
+                <p class="text-lg text-gray-600 dark:text-white max-w-2xl mx-auto leading-relaxed">
+                    I'm a passionate software developer at BYU, combining academic excellence with real-world project experience. My focus is on creating elegant, scalable solutions that make an impact.
+                </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                <div class="group bg-white dark:bg-byu-royal/20 rounded-2xl shadow-lg hover:shadow-2xl p-10 card-hover border border-byu-navy/10 dark:border-byu-royal/30 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-byu-royal/20 to-transparent rounded-full -translate-y-1/2 translate-x-1/2 group-hover:scale-150 transition-transform duration-500"></div>
+                    <div class="w-16 h-16 bg-gradient-to-br from-byu-navy to-byu-royal rounded-2xl flex items-center justify-center mb-6 relative z-10 group-hover:scale-110 transition-transform">
+                        <i data-feather="award" class="text-white w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3 text-byu-navy dark:text-white">Academic Excellence</h3>
+                    <p class="text-gray-600 dark:text-white/80 leading-relaxed">Pursuing rigorous coursework in Software Development with a focus on modern technologies, algorithms, and best practices in software engineering.</p>
+                    <div class="mt-6 flex items-center text-byu-royal font-semibold group-hover:translate-x-2 transition-transform">
+                        <span>Learn more</span>
+                        <i data-feather="arrow-right" class="w-4 h-4 ml-2"></i>
+                    </div>
+                </div>
+                
+                <div class="group bg-white dark:bg-byu-royal/20 rounded-2xl shadow-lg hover:shadow-2xl p-10 card-hover border border-byu-navy/10 dark:border-byu-royal/30 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-byu-royal/20 to-transparent rounded-full -translate-y-1/2 translate-x-1/2 group-hover:scale-150 transition-transform duration-500"></div>
+                    <div class="w-16 h-16 bg-gradient-to-br from-byu-navy to-byu-royal rounded-2xl flex items-center justify-center mb-6 relative z-10 group-hover:scale-110 transition-transform">
+                        <i data-feather="layers" class="text-white w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3 text-byu-navy dark:text-white">Full-Stack Development</h3>
+                    <p class="text-gray-600 dark:text-white/80 leading-relaxed">Building complete web applications and systems with modern frameworks. From frontend interfaces to robust backend APIs and database design.</p>
+                    <div class="mt-6 flex items-center text-byu-royal font-semibold group-hover:translate-x-2 transition-transform">
+                        <span>Explore projects</span>
+                        <i data-feather="arrow-right" class="w-4 h-4 ml-2"></i>
+                    </div>
+                </div>
+                
+                <div class="group bg-white dark:bg-byu-royal/20 rounded-2xl shadow-lg hover:shadow-2xl p-10 card-hover border border-byu-navy/10 dark:border-byu-royal/30 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-byu-royal/20 to-transparent rounded-full -translate-y-1/2 translate-x-1/2 group-hover:scale-150 transition-transform duration-500"></div>
+                    <div class="w-16 h-16 bg-gradient-to-br from-byu-navy to-byu-royal rounded-2xl flex items-center justify-center mb-6 relative z-10 group-hover:scale-110 transition-transform">
+                        <i data-feather="users" class="text-white w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3 text-byu-navy dark:text-white">Team Collaboration</h3>
+                    <p class="text-gray-600 dark:text-white/80 leading-relaxed">Working with peers and mentors using agile methodologies, git workflows, and collaborative tools to deliver real-world solutions effectively.</p>
+                    <div class="mt-6 flex items-center text-byu-royal font-semibold group-hover:translate-x-2 transition-transform">
+                        <span>See my work</span>
+                        <i data-feather="arrow-right" class="w-4 h-4 ml-2"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-24 relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-byu-light-blue/10 to-transparent rounded-full -translate-x-1/2 -translate-y-1/2 dark:from-byu-royal/5"></div>
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="text-center mb-16">
+                <div class="inline-block mb-4">
+                    <span class="inline-block bg-byu-royal/10 dark:bg-byu-royal/20 text-byu-royal px-4 py-2 rounded-full text-sm font-semibold">PORTFOLIO</span>
+                </div>
+                <h2 class="text-5xl md:text-6xl font-bold text-center mb-6 gradient-text">Featured Work</h2>
+                <p class="text-lg text-gray-600 dark:text-byu-light-blue max-w-2xl mx-auto">
+                    A selection of projects showcasing my skills in full-stack development, system design, and problem-solving
+                </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project Card 1 -->
+                <div class="group project-card rounded-2xl shadow-lg p-8 dark:bg-byu-royal/20 border border-byu-navy/10 dark:border-byu-royal/30 relative overflow-hidden hover:shadow-2xl transition-all duration-300">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-byu-royal/20 to-transparent rounded-full -translate-y-1/2 translate-x-1/2 group-hover:scale-150 transition-transform duration-500"></div>
+                    <div class="flex items-center justify-between mb-6 relative z-10">
+                        <h3 class="text-2xl font-bold text-byu-navy dark:text-white">Web Applications</h3>
+                        <div class="w-12 h-12 bg-gradient-to-br from-byu-navy to-byu-royal rounded-xl flex items-center justify-center group-hover:scale-125 transition-transform">
+                            <i data-feather="globe" class="text-white w-6 h-6"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 dark:text-white/80 mb-6 leading-relaxed">Full-stack web applications built with React, Vue, and modern frameworks. Focus on responsive design and user experience.</p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="bg-byu-navy/10 dark:bg-byu-royal/30 text-byu-navy dark:text-byu-light-blue text-xs font-semibold px-3 py-1 rounded-full">React</span>
+                        <span class="bg-byu-navy/10 dark:bg-byu-royal/30 text-byu-navy dark:text-byu-light-blue text-xs font-semibold px-3 py-1 rounded-full">Tailwind</span>
+                        <span class="bg-byu-navy/10 dark:bg-byu-royal/30 text-byu-navy dark:text-byu-light-blue text-xs font-semibold px-3 py-1 rounded-full">Node.js</span>
+                    </div>
+                    <a href="https://github.com/ituStudio" target="_blank" class="inline-flex items-center text-byu-navy dark:text-byu-light-blue hover:text-byu-royal dark:hover:text-white font-bold group-hover:translate-x-2 transition-all">
+                        <span>View on GitHub</span>
+                        <i data-feather="arrow-right" class="w-4 h-4 ml-2"></i>
+                    </a>
+                </div>
+                
+                <!-- Project Card 2 -->
+                <div class="group project-card rounded-2xl shadow-lg p-8 dark:bg-byu-royal/20 border border-byu-navy/10 dark:border-byu-royal/30 relative overflow-hidden hover:shadow-2xl transition-all duration-300">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-byu-royal/20 to-transparent rounded-full -translate-y-1/2 translate-x-1/2 group-hover:scale-150 transition-transform duration-500"></div>
+                    <div class="flex items-center justify-between mb-6 relative z-10">
+                        <h3 class="text-2xl font-bold text-byu-navy dark:text-white">APIs & Backend</h3>
+                        <div class="w-12 h-12 bg-gradient-to-br from-byu-navy to-byu-royal rounded-xl flex items-center justify-center group-hover:scale-125 transition-transform">
+                            <i data-feather="server" class="text-white w-6 h-6"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 dark:text-white/80 mb-6 leading-relaxed">Robust REST APIs and backend services with authentication, database design, and cloud deployment.</p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="bg-byu-navy/10 dark:bg-byu-royal/30 text-byu-navy dark:text-byu-light-blue text-xs font-semibold px-3 py-1 rounded-full">Express</span>
+                        <span class="bg-byu-navy/10 dark:bg-byu-royal/30 text-byu-navy dark:text-byu-light-blue text-xs font-semibold px-3 py-1 rounded-full">MongoDB</span>
+                        <span class="bg-byu-navy/10 dark:bg-byu-royal/30 text-byu-navy dark:text-byu-light-blue text-xs font-semibold px-3 py-1 rounded-full">Docker</span>
+                    </div>
+                    <a href="https://github.com/ituStudio" target="_blank" class="inline-flex items-center text-byu-navy dark:text-byu-light-blue hover:text-byu-royal dark:hover:text-white font-bold group-hover:translate-x-2 transition-all">
+                        <span>View on GitHub</span>
+                        <i data-feather="arrow-right" class="w-4 h-4 ml-2"></i>
+                    </a>
+                </div>
+                
+                <!-- Project Card 3 -->
+                <div class="group project-card rounded-2xl shadow-lg p-8 dark:bg-byu-royal/20 border border-byu-navy/10 dark:border-byu-royal/30 relative overflow-hidden hover:shadow-2xl transition-all duration-300">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-byu-royal/20 to-transparent rounded-full -translate-y-1/2 translate-x-1/2 group-hover:scale-150 transition-transform duration-500"></div>
+                    <div class="flex items-center justify-between mb-6 relative z-10">
+                        <h3 class="text-2xl font-bold text-byu-navy dark:text-white">Data Science</h3>
+                        <div class="w-12 h-12 bg-gradient-to-br from-byu-navy to-byu-royal rounded-xl flex items-center justify-center group-hover:scale-125 transition-transform">
+                            <i data-feather="bar-chart-2" class="text-white w-6 h-6"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 dark:text-white/80 mb-6 leading-relaxed">Data analysis and visualization projects using Python. Machine learning and statistical insights from real datasets.</p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="bg-byu-navy/10 dark:bg-byu-royal/30 text-byu-navy dark:text-byu-light-blue text-xs font-semibold px-3 py-1 rounded-full">Python</span>
+                        <span class="bg-byu-navy/10 dark:bg-byu-royal/30 text-byu-navy dark:text-byu-light-blue text-xs font-semibold px-3 py-1 rounded-full">Pandas</span>
+                        <span class="bg-byu-navy/10 dark:bg-byu-royal/30 text-byu-navy dark:text-byu-light-blue text-xs font-semibold px-3 py-1 rounded-full">ML</span>
+                    </div>
+                    <a href="https://github.com/ituStudio" target="_blank" class="inline-flex items-center text-byu-navy dark:text-byu-light-blue hover:text-byu-royal dark:hover:text-white font-bold group-hover:translate-x-2 transition-all">
+                        <span>View on GitHub</span>
+                        <i data-feather="arrow-right" class="w-4 h-4 ml-2"></i>
+                    </a>
+                </div>
+                
+                <!-- Project Card 4 -->
+                <div class="group project-card rounded-2xl shadow-lg p-8 dark:bg-byu-royal/20 border border-byu-navy/10 dark:border-byu-royal/30 relative overflow-hidden hover:shadow-2xl transition-all duration-300">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-byu-royal/20 to-transparent rounded-full -translate-y-1/2 translate-x-1/2 group-hover:scale-150 transition-transform duration-500"></div>
+                    <div class="flex items-center justify-between mb-6 relative z-10">
+                        <h3 class="text-2xl font-bold text-byu-navy dark:text-white">Mobile Apps</h3>
+                        <div class="w-12 h-12 bg-gradient-to-br from-byu-navy to-byu-royal rounded-xl flex items-center justify-center group-hover:scale-125 transition-transform">
+                            <i data-feather="smartphone" class="text-white w-6 h-6"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 dark:text-white/80 mb-6 leading-relaxed">Cross-platform mobile applications with native performance. iOS and Android development using modern frameworks.</p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="bg-byu-navy/10 dark:bg-byu-royal/30 text-byu-navy dark:text-byu-light-blue text-xs font-semibold px-3 py-1 rounded-full">React Native</span>
+                        <span class="bg-byu-navy/10 dark:bg-byu-royal/30 text-byu-navy dark:text-byu-light-blue text-xs font-semibold px-3 py-1 rounded-full">Firebase</span>
+                        <span class="bg-byu-navy/10 dark:bg-byu-royal/30 text-byu-navy dark:text-byu-light-blue text-xs font-semibold px-3 py-1 rounded-full">APIs</span>
+                    </div>
+                    <a href="https://github.com/ituStudio" target="_blank" class="inline-flex items-center text-byu-navy dark:text-byu-light-blue hover:text-byu-royal dark:hover:text-white font-bold group-hover:translate-x-2 transition-all">
+                        <span>View on GitHub</span>
+                        <i data-feather="arrow-right" class="w-4 h-4 ml-2"></i>
+                    </a>
+                </div>
+                
+                <!-- Project Card 5 -->
+                <div class="group project-card rounded-2xl shadow-lg p-8 dark:bg-byu-royal/20 border border-byu-navy/10 dark:border-byu-royal/30 relative overflow-hidden hover:shadow-2xl transition-all duration-300">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-byu-royal/20 to-transparent rounded-full -translate-y-1/2 translate-x-1/2 group-hover:scale-150 transition-transform duration-500"></div>
+                    <div class="flex items-center justify-between mb-6 relative z-10">
+                        <h3 class="text-2xl font-bold text-byu-navy dark:text-white">DevOps & Cloud</h3>
+                        <div class="w-12 h-12 bg-gradient-to-br from-byu-navy to-byu-royal rounded-xl flex items-center justify-center group-hover:scale-125 transition-transform">
+                            <i data-feather="cloud" class="text-white w-6 h-6"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 dark:text-white/80 mb-6 leading-relaxed">Infrastructure and deployment automation. Cloud solutions with CI/CD pipelines and containerization strategies.</p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="bg-byu-navy/10 dark:bg-byu-royal/30 text-byu-navy dark:text-byu-light-blue text-xs font-semibold px-3 py-1 rounded-full">AWS</span>
+                        <span class="bg-byu-navy/10 dark:bg-byu-royal/30 text-byu-navy dark:text-byu-light-blue text-xs font-semibold px-3 py-1 rounded-full">Kubernetes</span>
+                        <span class="bg-byu-navy/10 dark:bg-byu-royal/30 text-byu-navy dark:text-byu-light-blue text-xs font-semibold px-3 py-1 rounded-full">GitHub Actions</span>
+                    </div>
+                    <a href="https://github.com/ituStudio" target="_blank" class="inline-flex items-center text-byu-navy dark:text-byu-light-blue hover:text-byu-royal dark:hover:text-white font-bold group-hover:translate-x-2 transition-all">
+                        <span>View on GitHub</span>
+                        <i data-feather="arrow-right" class="w-4 h-4 ml-2"></i>
+                    </a>
+                </div>
+                
+                <!-- Project Card 6 -->
+                <div class="group project-card rounded-2xl shadow-lg p-8 dark:bg-byu-royal/20 border border-byu-navy/10 dark:border-byu-royal/30 relative overflow-hidden hover:shadow-2xl transition-all duration-300">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-byu-royal/20 to-transparent rounded-full -translate-y-1/2 translate-x-1/2 group-hover:scale-150 transition-transform duration-500"></div>
+                    <div class="flex items-center justify-between mb-6 relative z-10">
+                        <h3 class="text-2xl font-bold text-byu-navy dark:text-white">Coursework</h3>
+                        <div class="w-12 h-12 bg-gradient-to-br from-byu-navy to-byu-royal rounded-xl flex items-center justify-center group-hover:scale-125 transition-transform">
+                            <i data-feather="book" class="text-white w-6 h-6"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 dark:text-white/80 mb-6 leading-relaxed">Academic projects and assignments. Applying concepts from BYU's computer science curriculum to practical applications.</p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="bg-byu-navy/10 dark:bg-byu-royal/30 text-byu-navy dark:text-byu-light-blue text-xs font-semibold px-3 py-1 rounded-full">Algorithms</span>
+                        <span class="bg-byu-navy/10 dark:bg-byu-royal/30 text-byu-navy dark:text-byu-light-blue text-xs font-semibold px-3 py-1 rounded-full">Data Structures</span>
+                        <span class="bg-byu-navy/10 dark:bg-byu-royal/30 text-byu-navy dark:text-byu-light-blue text-xs font-semibold px-3 py-1 rounded-full">More</span>
+                    </div>
+                    <a href="https://github.com/ituStudio" target="_blank" class="inline-flex items-center text-byu-navy dark:text-byu-light-blue hover:text-byu-royal dark:hover:text-white font-bold group-hover:translate-x-2 transition-all">
+                        <span>View on GitHub</span>
+                        <i data-feather="arrow-right" class="w-4 h-4 ml-2"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="text-center mt-20">
+                <div class="inline-block">
+                    <p class="text-gray-600 dark:text-white mb-8 text-lg">And much more on GitHub</p>
+                    <a href="https://github.com/ituStudio" target="_blank" class="inline-flex items-center justify-center bg-gradient-to-r from-byu-navy to-byu-royal dark:from-byu-royal dark:to-byu-navy text-white px-12 py-5 rounded-xl font-bold hover:shadow-xl transition-all transform hover:scale-105 space-x-3">
+                        <i data-feather="github" class="w-6 h-6"></i>
+                        <span>Explore All Projects</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-24 bg-white dark:bg-byu-navy relative overflow-hidden">
+        <div class="absolute bottom-0 right-0 w-96 h-96 bg-gradient-to-br from-byu-royal/10 to-transparent rounded-full translate-x-1/3 translate-y-1/3 dark:from-byu-royal/5"></div>
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="text-center mb-16">
+                <div class="inline-block mb-4">
+                    <span class="inline-block bg-byu-royal/10 dark:bg-byu-royal/20 text-byu-royal px-4 py-2 rounded-full text-sm font-semibold">EXPERTISE</span>
+                </div>
+                <h2 class="text-5xl md:text-6xl font-bold text-center mb-6 gradient-text">Technical Skills</h2>
+                <p class="text-lg text-gray-600 dark:text-white max-w-2xl mx-auto">
+                    A comprehensive toolkit of technologies that I use to build scalable and innovative solutions
+                </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+                <div class="space-y-8">
+                    <div>
+                        <h3 class="text-2xl font-bold mb-8 text-byu-navy dark:text-white flex items-center space-x-3">
+                            <span>Languages & Frameworks</span>
+                            <span class="w-12 h-1 bg-gradient-to-r from-byu-royal to-transparent rounded-full"></span>
+                        </h3>
+                        <div class="space-y-4">
+                            <div class="group flex items-center space-x-3 p-4 rounded-lg bg-gray-50 dark:bg-byu-royal/10 hover:bg-gray-100 dark:hover:bg-byu-royal/20 transition-all cursor-pointer">
+                                <span class="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-byu-navy to-byu-royal rounded-lg flex items-center justify-center text-white font-bold group-hover:scale-110 transition-transform">✓</span>
+                                <span class="text-gray-700 dark:text-white font-medium">Python, JavaScript, TypeScript, Java, C++</span>
+                            </div>
+                            <div class="group flex items-center space-x-3 p-4 rounded-lg bg-gray-50 dark:bg-byu-royal/10 hover:bg-gray-100 dark:hover:bg-byu-royal/20 transition-all cursor-pointer">
+                                <span class="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-byu-navy to-byu-royal rounded-lg flex items-center justify-center text-white font-bold group-hover:scale-110 transition-transform">✓</span>
+                                <span class="text-gray-700 dark:text-white font-medium">React, Vue, Angular, Node.js, Express</span>
+                            </div>
+                            <div class="group flex items-center space-x-3 p-4 rounded-lg bg-gray-50 dark:bg-byu-royal/10 hover:bg-gray-100 dark:hover:bg-byu-royal/20 transition-all cursor-pointer">
+                                <span class="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-byu-navy to-byu-royal rounded-lg flex items-center justify-center text-white font-bold group-hover:scale-110 transition-transform">✓</span>
+                                <span class="text-gray-700 dark:text-white font-medium">SQL, MongoDB, Firebase, PostgreSQL</span>
+                            </div>
+                            <div class="group flex items-center space-x-3 p-4 rounded-lg bg-gray-50 dark:bg-byu-royal/10 hover:bg-gray-100 dark:hover:bg-byu-royal/20 transition-all cursor-pointer">
+                                <span class="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-byu-navy to-byu-royal rounded-lg flex items-center justify-center text-white font-bold group-hover:scale-110 transition-transform">✓</span>
+                                <span class="text-gray-700 dark:text-white font-medium">HTML5, CSS3, Tailwind CSS, Bootstrap</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="space-y-8">
+                    <div>
+                        <h3 class="text-2xl font-bold mb-8 text-byu-navy dark:text-white flex items-center space-x-3">
+                            <span>Tools & Platforms</span>
+                            <span class="w-12 h-1 bg-gradient-to-r from-byu-royal to-transparent rounded-full"></span>
+                        </h3>
+                        <div class="space-y-4">
+                            <div class="group flex items-center space-x-3 p-4 rounded-lg bg-gray-50 dark:bg-byu-royal/10 hover:bg-gray-100 dark:hover:bg-byu-royal/20 transition-all cursor-pointer">
+                                <span class="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-byu-navy to-byu-royal rounded-lg flex items-center justify-center text-white font-bold group-hover:scale-110 transition-transform">✓</span>
+                                <span class="text-gray-700 dark:text-white font-medium">Git, GitHub, Docker, Kubernetes</span>
+                            </div>
+                            <div class="group flex items-center space-x-3 p-4 rounded-lg bg-gray-50 dark:bg-byu-royal/10 hover:bg-gray-100 dark:hover:bg-byu-royal/20 transition-all cursor-pointer">
+                                <span class="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-byu-navy to-byu-royal rounded-lg flex items-center justify-center text-white font-bold group-hover:scale-110 transition-transform">✓</span>
+                                <span class="text-gray-700 dark:text-white font-medium">AWS, Google Cloud, Heroku, Netlify</span>
+                            </div>
+                            <div class="group flex items-center space-x-3 p-4 rounded-lg bg-gray-50 dark:bg-byu-royal/10 hover:bg-gray-100 dark:hover:bg-byu-royal/20 transition-all cursor-pointer">
+                                <span class="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-byu-navy to-byu-royal rounded-lg flex items-center justify-center text-white font-bold group-hover:scale-110 transition-transform">✓</span>
+                                <span class="text-gray-700 dark:text-white font-medium">VS Code, Linux, REST APIs, GraphQL</span>
+                            </div>
+                            <div class="group flex items-center space-x-3 p-4 rounded-lg bg-gray-50 dark:bg-byu-royal/10 hover:bg-gray-100 dark:hover:bg-byu-royal/20 transition-all cursor-pointer">
+                                <span class="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-byu-navy to-byu-royal rounded-lg flex items-center justify-center text-white font-bold group-hover:scale-110 transition-transform">✓</span>
+                                <span class="text-gray-700 dark:text-white font-medium">Agile/Scrum, CI/CD, Testing Frameworks</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- CTA Section -->
+    <section class="hero-gradient text-white py-28 relative overflow-hidden">
+        <div class="absolute inset-0">
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-white/5 rounded-full blur-3xl"></div>
+        </div>
+        <div class="container mx-auto px-4 relative z-10 text-center">
+            <h2 class="text-5xl md:text-6xl font-bold mb-8 leading-tight">
+                Ready to Collaborate?
+            </h2>
+            <p class="text-xl md:text-2xl mb-12 opacity-95 max-w-3xl mx-auto leading-relaxed">
+                Explore my projects, see how I solve problems, and let's build something amazing together. Check out my GitHub organization for the full scope of my work.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
+                <a href="https://github.com/ituStudio" target="_blank" class="group inline-flex items-center justify-center bg-white text-byu-navy px-12 py-5 rounded-xl font-bold text-lg hover:shadow-2xl transition-all transform hover:scale-105 space-x-3">
+                    <i data-feather="github" class="w-6 h-6 group-hover:rotate-12 transition-transform"></i>
+                    <span>Visit ituStudio on GitHub</span>
+                </a>
+                <a href="#projects" class="inline-flex items-center justify-center border-2 border-white bg-transparent hover:bg-white/10 text-white px-12 py-5 rounded-xl font-bold text-lg transition-all transform hover:scale-105 space-x-3">
+                    <span>Explore Projects</span>
+                    <i data-feather="arrow-right" class="w-5 h-5"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gradient-to-b from-byu-navy to-black text-white py-20">
+        <div class="container mx-auto px-4">
+            <!-- Main Footer Content -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-16 pb-12 border-b border-white/10">
+                <!-- Brand Section -->
+                <div class="lg:col-span-1">
+                    <div class="flex items-center space-x-3 mb-6">
+                        <img src="images/byu-logo.png" alt="BYU Cougar Logo" class="h-14 object-contain">
+                        <div>
+                            <h3 class="text-2xl font-bold">ituStudio</h3>
+                            <p class="text-sm opacity-75">BYU Software Dev</p>
+                        </div>
+                    </div>
+                    <p class="opacity-75 text-sm leading-relaxed mb-6">
+                        Showcasing innovative software development projects and coursework from Brigham Young University's talented students.
+                    </p>
+                    <div class="flex space-x-3">
+                        <a href="https://github.com/ituStudio" target="_blank" class="bg-white/10 hover:bg-byu-royal p-3 rounded-full transition-all transform hover:scale-110" title="GitHub">
+                            <i data-feather="github" class="w-5 h-5"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/itusebastian/" target="_blank" class="bg-white/10 hover:bg-byu-royal p-3 rounded-full transition-all transform hover:scale-110" title="LinkedIn">
+                            <i data-feather="linkedin" class="w-5 h-5"></i>
+                        </a>
+                        <a href="mailto:dev@itusebastian.com" class="bg-white/10 hover:bg-byu-royal p-3 rounded-full transition-all transform hover:scale-110" title="Email">
+                            <i data-feather="mail" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-lg font-bold mb-6 flex items-center space-x-2">
+                        <span>Quick Links</span>
+                        <span class="w-8 h-1 bg-gradient-to-r from-byu-royal to-transparent rounded-full"></span>
+                    </h4>
+                    <ul class="space-y-3">
+                        <li><a href="#about" class="opacity-75 hover:opacity-100 hover:text-byu-light-blue transition-all flex items-center space-x-2">
+                            <span>→</span>
+                            <span>About Me</span>
+                        </a></li>
+                        <li><a href="#projects" class="opacity-75 hover:opacity-100 hover:text-byu-light-blue transition-all flex items-center space-x-2">
+                            <span>→</span>
+                            <span>Projects</span>
+                        </a></li>
+                        <li><a href="#skills" class="opacity-75 hover:opacity-100 hover:text-byu-light-blue transition-all flex items-center space-x-2">
+                            <span>→</span>
+                            <span>Skills</span>
+                        </a></li>
+                        <li><a href="https://github.com/ituStudio" target="_blank" class="opacity-75 hover:opacity-100 hover:text-byu-light-blue transition-all flex items-center space-x-2">
+                            <span>→</span>
+                            <span>GitHub Repos</span>
+                        </a></li>
+                    </ul>
+                </div>
+
+                <!-- BYU Resources -->
+                <div>
+                    <h4 class="text-lg font-bold mb-6 flex items-center space-x-2">
+                        <span>BYU Resources</span>
+                        <span class="w-8 h-1 bg-gradient-to-r from-byu-royal to-transparent rounded-full"></span>
+                    </h4>
+                    <ul class="space-y-3">
+                        <li><a href="https://byu.edu" target="_blank" class="opacity-75 hover:opacity-100 hover:text-byu-light-blue transition-all flex items-center space-x-2">
+                            <span>🏫</span>
+                            <span>BYU Main Website</span>
+                        </a></li>
+                        <li><a href="https://engineering.byu.edu" target="_blank" class="opacity-75 hover:opacity-100 hover:text-byu-light-blue transition-all flex items-center space-x-2">
+                            <span>⚙️</span>
+                            <span>Engineering College</span>
+                        </a></li>
+                        <li><a href="https://cs.byu.edu" target="_blank" class="opacity-75 hover:opacity-100 hover:text-byu-light-blue transition-all flex items-center space-x-2">
+                            <span>💻</span>
+                            <span>Computer Science</span>
+                        </a></li>
+                        <li><a href="https://students.byu.edu" target="_blank" class="opacity-75 hover:opacity-100 hover:text-byu-light-blue transition-all flex items-center space-x-2">
+                            <span>🎓</span>
+                            <span>Student Portal</span>
+                        </a></li>
+                    </ul>
+                </div>
+
+                <!-- BYU Spirit -->
+                <div>
+                    <h4 class="text-lg font-bold mb-6 flex items-center space-x-2">
+                        <span>BYU Spirit 🐻</span>
+                        <span class="w-8 h-1 bg-gradient-to-r from-byu-royal to-transparent rounded-full"></span>
+                    </h4>
+                    <ul class="space-y-3">
+                        <li><a href="https://byucougars.com" target="_blank" class="opacity-75 hover:opacity-100 hover:text-byu-light-blue transition-all flex items-center space-x-2">
+                            <span>🏆</span>
+                            <span>BYU Athletics</span>
+                        </a></li>
+                        <li><a href="https://byucougars.com/sports/football" target="_blank" class="opacity-75 hover:opacity-100 hover:text-byu-light-blue transition-all flex items-center space-x-2">
+                            <span>🏈</span>
+                            <span>Football Team</span>
+                        </a></li>
+                        <li><a href="https://www.byuradio.org/" target="_blank" class="opacity-75 hover:opacity-100 hover:text-byu-light-blue transition-all flex items-center space-x-2">
+                            <span>📻</span>
+                            <span>BYU Radio</span>
+                        </a></li>
+                        <li><a href="https://www.instagram.com/byucougars/" target="_blank" class="opacity-75 hover:opacity-100 hover:text-byu-light-blue transition-all flex items-center space-x-2">
+                            <span>📸</span>
+                            <span>Follow @BYUCougars</span>
+                        </a></li>
+                    </ul>
+                </div>
+
+                <!-- Season Achievement Section -->
+                <div class="bg-gradient-to-br from-byu-royal/30 to-byu-navy/50 rounded-xl p-6 border border-byu-royal/40 relative overflow-hidden group hover:shadow-lg transition-all">
+                    <div class="absolute top-0 right-0 w-20 h-20 bg-byu-royal/10 rounded-full -translate-y-1/2 translate-x-1/2 group-hover:scale-150 transition-transform duration-500"></div>
+                    <h4 class="text-lg font-bold mb-4 flex items-center space-x-2 relative z-10">
+                        <span class="text-2xl">🏆</span>
+                        <span>Big 12 Champs</span>
+                    </h4>
+                    <div class="space-y-3 text-sm relative z-10">
+                        <div>
+                            <p class="font-semibold text-byu-light-blue text-lg">2nd Place Finish</p>
+                            <p class="opacity-75 text-xs mt-1">Big 12 Conference 2025</p>
+                        </div>
+                        <div class="pt-2 border-t border-white/20">
+                            <p class="text-white font-medium">Exceptional Season</p>
+                            <p class="opacity-75 text-xs mt-1">Building momentum for future championships</p>
+                        </div>
+                    </div>
+                    <a href="https://byucougars.com/sports/football" target="_blank" class="mt-4 inline-flex items-center text-byu-light-blue hover:text-white font-semibold text-sm group-hover:translate-x-1 transition-all">
+                        <span>Learn more</span>
+                        <i data-feather="arrow-right" class="w-3 h-3 ml-2"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Bottom Footer -->
+            <div class="text-center space-y-4">
+                <div class="flex items-center justify-center space-x-2 text-sm opacity-75">
+                    <span>© 2024-2025 ituStudio</span>
+                    <span>•</span>
+                    <span>Brigham Young University</span>
+                    <span>•</span>
+                    <span>Provo, Utah</span>
+                </div>
+                <p class="text-sm opacity-75">
+                    Built with passion by a BYU student developer | 
+                    <a href="https://byu.edu" target="_blank" class="hover:text-byu-light-blue transition-colors font-semibold">Go Cougars!</a> 🐻
+                </p>
+                <p class="text-xs opacity-50">
+                    Part of the ituStudio organization — showcasing innovation, excellence, and school pride
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        if (mobileMenuBtn) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+            
+            // Close menu when a link is clicked
+            document.querySelectorAll('#mobileMenu a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+        }
+        
+        // Theme toggle functionality
+        const themeToggle = document.getElementById('themeToggle');
+        const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+        const currentTheme = localStorage.getItem('theme');
+        
+        if (currentTheme === 'dark' || (!currentTheme && prefersDarkScheme.matches)) {
+            document.documentElement.classList.add('dark');
+        }
+        
+        themeToggle.addEventListener('click', () => {
+            const isDark = document.documentElement.classList.contains('dark');
+            document.documentElement.classList.toggle('dark');
+            localStorage.setItem('theme', isDark ? 'light' : 'dark');
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Initialize feather icons
+        feather.replace();
+        
+        // Add scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        
+        // Observe elements for animation
+        document.querySelectorAll('.card-hover').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>

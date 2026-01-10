@@ -1,0 +1,221 @@
+/* BYU itustudio Theme - Enhanced Header */
+
+:root {
+  --byu-navy: #002e5d;
+  --byu-royal: #0047ba;
+  --byu-light-blue: #bdd6e6;
+  --byu-slate: #7c878e;
+  --byu-light-gray: #c7c9c7;
+  --white: #ffffff;
+  --cougar-gold: #ffd700;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Arial",
+    sans-serif;
+  color: var(--byu-navy);
+  background-color: #f9fafb;
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+  color: var(--byu-navy);
+}
+
+a {
+  color: var(--byu-navy);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--byu-royal);
+}
+
+/* Enhanced Header Styles */
+.header-top {
+  font-size: 0.8rem;
+  letter-spacing: 0.5px;
+  opacity: 0.9;
+}
+
+.logo-badge {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  padding: 6px 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  backdrop-filter: blur(10px);
+}
+
+.nav-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.15);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  color: #ffffff;
+  padding: 8px 14px;
+  border-radius: 24px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.nav-badge:hover {
+  background: rgba(255, 255, 255, 0.25);
+  border-color: #ffffff;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
+}
+
+.nav-badge i {
+  font-size: 1.2rem;
+}
+
+.header-accent {
+  width: 3px;
+  height: 32px;
+  background: linear-gradient(180deg, #ffd700 0%, #ffa500 100%);
+  border-radius: 2px;
+}
+
+.hero-gradient {
+  background: linear-gradient(135deg, #002e5d 0%, #0047ba 50%, #0047ba 100%);
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #002e5d 0%, #0047ba 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.card-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+.card-hover:hover {
+  transform: translateY(-12px) scale(1.03);
+  box-shadow: 0 25px 50px -12px rgba(0, 46, 92, 0.3);
+}
+
+.project-card {
+  background: white;
+  border-left: 4px solid var(--byu-navy);
+  transition: all 0.3s ease;
+}
+
+.project-card:hover {
+  border-left-color: var(--byu-royal);
+  transform: translateX(8px);
+  box-shadow: 0 10px 30px rgba(0, 46, 93, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 28px;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  .container {
+    padding: 0 16px;
+  }
+
+  .header-top {
+    font-size: 0.75rem;
+  }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: var(--byu-navy);
+    color: #ffffff;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: #ffffff;
+  }
+
+  .project-card {
+    background: rgba(0, 71, 186, 0.15);
+    color: #ffffff;
+    border-left-color: var(--byu-royal);
+  }
+
+  a {
+    color: var(--byu-light-blue);
+  }
+
+  a:hover {
+    color: #ffffff;
+  }
+}
+
+/* Animations */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-bounce {
+  animation: bounce 2s infinite;
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Focus States for Accessibility */
+a:focus,
+button:focus {
+  outline: 2px solid var(--byu-royal);
+  outline-offset: 2px;
+}
