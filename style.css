@@ -45,10 +45,29 @@ a:hover {
 }
 
 /* Enhanced Header Styles */
+header {
+  background: linear-gradient(
+    90deg,
+    rgba(0, 46, 93, 0.98) 0%,
+    rgba(0, 71, 186, 0.95) 100%
+  );
+  box-shadow: 0 4px 20px rgba(0, 46, 93, 0.3);
+}
+
 .header-top {
   font-size: 0.8rem;
   letter-spacing: 0.5px;
   opacity: 0.9;
+}
+
+.header-divider {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
 }
 
 .logo-badge {
@@ -63,6 +82,13 @@ a:hover {
   backdrop-filter: blur(10px);
 }
 
+.nav-link-group {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
 .nav-badge {
   display: inline-flex;
   align-items: center;
@@ -75,7 +101,6 @@ a:hover {
   font-size: 0.9rem;
   font-weight: 600;
   transition: all 0.3s ease;
-  text-decoration: none;
 }
 
 .nav-badge:hover {
@@ -92,12 +117,21 @@ a:hover {
 .header-accent {
   width: 3px;
   height: 32px;
-  background: linear-gradient(180deg, #ffd700 0%, #ffa500 100%);
+  background: linear-gradient(180deg, #0047ba 0%, #002e5d 100%);
   border-radius: 2px;
 }
 
 .hero-gradient {
   background: linear-gradient(135deg, #002e5d 0%, #0047ba 50%, #0047ba 100%);
+}
+
+.card-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-hover:hover {
+  transform: translateY(-12px) scale(1.03);
+  box-shadow: 0 25px 50px -12px rgba(0, 46, 92, 0.3);
 }
 
 .gradient-text {
@@ -107,26 +141,28 @@ a:hover {
   background-clip: text;
 }
 
-.card-hover {
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  cursor: pointer;
+html.dark .gradient-text {
+  background: linear-gradient(135deg, #bdd6e6 0%, #ffffff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
-.card-hover:hover {
-  transform: translateY(-12px) scale(1.03);
-  box-shadow: 0 25px 50px -12px rgba(0, 46, 92, 0.3);
+.cougar-emoji {
+  font-size: 4rem;
+  animation: bounce 2s infinite;
 }
 
 .project-card {
   background: white;
-  border-left: 4px solid var(--byu-navy);
+  border-left: 4px solid #002e5d;
   transition: all 0.3s ease;
 }
 
 .project-card:hover {
-  border-left-color: var(--byu-royal);
+  border-left-color: #0047ba;
   transform: translateX(8px);
-  box-shadow: 0 10px 30px rgba(0, 46, 93, 0.2);
+  box-shadow: 0 10px 30px rgba(0, 46, 92, 0.2);
 }
 
 /* Responsive Design */
