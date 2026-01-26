@@ -1,0 +1,19 @@
+// BYU Color Variables
+$byu-navy: #002e5d;
+$byu-royal: #0047ba;
+$byu-light-blue: #bdd6e6;
+$byu-slate: #7c878e;
+$byu-light-gray: #c7c9c7;
+$white: #ffffff;
+$cougar-gold: #ffd700;
+
+// CSS Variables for compatibility
+:root {
+  --byu-navy: #{$byu-navy};
+  --byu-royal: #{$byu-royal};
+  --byu-light-blue: #{$byu-light-blue};
+  --byu-slate: #{$byu-slate};
+  --byu-light-gray: #{$byu-light-gray};
+  --white: #{$white};
+  --cougar-gold: #{$cougar-gold};
+}

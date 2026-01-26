@@ -1,0 +1,73 @@
+<!-- Header Top Bar -->
+<div class="bg-gradient-to-r from-byu-navy via-byu-royal to-byu-royal text-white text-center py-3 header-top">
+    <div class="flex items-center justify-center space-x-6 flex-wrap">
+        <span>📍 Brigham Young University | Provo, Utah</span>
+        <span class="hidden sm:inline">•</span>
+        <span class="hidden sm:inline">🏫 College of Physical and Mathematical Sciences</span>
+    </div>
+</div>
+
+<!-- Header -->
+<header class="text-white py-2 px-4 sm:px-6 md:px-8 lg:px-12 flex justify-between items-center sticky top-0 z-50">
+    <div class="flex items-center space-x-4 flex-1">
+        <!-- BYU Logo -->
+        <img src="{{ site.baseurl }}/assets/images/byu-logo.png" alt="BYU Cougar Logo" class="h-12 sm:h-16 object-contain">
+        
+        <!-- Yellow Accent Line -->
+        <div class="header-accent hidden md:block"></div>
+        
+        <!-- Logo Text -->
+        <div class="flex flex-col">
+            <h1 class="text-2xl sm:text-3xl font-bold flex items-center space-x-2">
+                <span>BYULabs</span>
+            </h1>
+            <div class="flex items-center space-x-2 mt-1">
+                <span class="text-xs opacity-75 hidden sm:inline">by ItuSebastian</span>
+            </div>
+
+            <div class="flex items-center space-x-2 mt-1">
+            </div>
+        </div>
+    </div>
+    
+    <!-- Main Navigation -->
+    <nav class="hidden lg:flex items-center space-x-8 flex-1 justify-center px-8">
+        <a href="#about" class="text-white/90 hover:text-yellow-300 transition-colors font-medium">About</a>
+        <a href="#projects" class="text-white/90 hover:text-yellow-300 transition-colors font-medium">Projects</a>
+        <a href="#skills" class="text-white/90 hover:text-yellow-300 transition-colors font-medium">Skills</a>
+        <div class="w-px h-6 bg-white/20"></div>
+        <a href="https://byu.edu" target="_blank" class="nav-badge hidden 2xl:inline-flex" title="BYU Main Website">
+            <span>🏫</span>
+            <span>BYU.edu</span>
+        </a>
+        <a href="https://engineering.byu.edu" target="_blank" class="nav-badge hidden 2xl:inline-flex" title="Engineering College">
+            <span>⚙️</span>
+            <span>Engineering</span>
+        </a>
+    </nav>
+
+    <!-- Right Side Actions -->
+    <div class="flex items-center space-x-4">
+        <a href="https://github.com/BYULabs" target="_blank" class="hidden md:inline-block bg-byu-royal hover:bg-byu-navy text-white px-5 py-2 rounded-full font-semibold transition-all transform hover:scale-105">
+            <i data-feather="github" class="inline w-4 h-4 mr-2"></i>GitHub
+        </a>
+        <button id="themeToggle" class="p-3 rounded-full bg-white/10 hover:bg-white/20 transition-colors">
+            <i data-feather="moon" class="hidden dark:block w-5 h-5"></i>
+            <i data-feather="sun" class="dark:hidden w-5 h-5"></i>
+        </button>
+        <button class="lg:hidden p-2 rounded-lg bg-white/10 hover:bg-white/20" id="mobileMenuBtn">
+            <i data-feather="menu" class="w-6 h-6"></i>
+        </button>
+    </div>
+</header>
+
+<!-- Mobile Menu -->
+<nav id="mobileMenu" class="hidden lg:hidden bg-gradient-to-b from-byu-royal to-byu-navy text-white p-6 space-y-4 border-b border-white/10">
+    <a href="#about" class="block py-2 hover:text-yellow-300 transition-colors">📖 About</a>
+    <a href="#projects" class="block py-2 hover:text-yellow-300 transition-colors">🚀 Projects</a>
+    <a href="#skills" class="block py-2 hover:text-yellow-300 transition-colors">💻 Skills</a>
+    <div class="h-px bg-white/10 my-4"></div>
+    <a href="https://byu.edu" target="_blank" class="block py-2 hover:text-yellow-300 transition-colors">🏫 BYU Website</a>
+    <a href="https://engineering.byu.edu" target="_blank" class="block py-2 hover:text-yellow-300 transition-colors">⚙️ Engineering College</a>
+    <a href="https://github.com/BYULabs" target="_blank" class="block py-2 bg-byu-royal text-white px-4 rounded-lg font-semibold hover:bg-byu-navy">GitHub Organization</a>
+</nav>

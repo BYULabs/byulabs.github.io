@@ -2,16 +2,12 @@
 # Main SCSS file for Jekyll - imports all partials
 ---
 
+// Import all SCSS partials
 @import "byulabs/colors";
 @import "byulabs/typography";
 @import "byulabs/components";
-@import "byulabs/prose";
 @import "byulabs/responsive";
-
-// Smooth scrolling
-html {
-    scroll-behavior: smooth;
-}
+@import "byulabs/prose";
 
 // Custom container
 .container {

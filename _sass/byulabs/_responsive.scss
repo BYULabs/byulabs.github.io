@@ -1,0 +1,51 @@
+@import 'colors';
+
+// Responsive Design
+@media (max-width: 768px) {
+  h1 {
+    font-size: 28px;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  .container {
+    padding: 0 16px;
+  }
+
+  .header-top {
+    font-size: 0.75rem;
+  }
+}
+
+// Dark Mode Support
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: $byu-navy;
+    color: $white;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: $white;
+  }
+
+  .project-card {
+    background: rgba($byu-royal, 0.15);
+    color: $white;
+    border-left-color: $byu-royal;
+  }
+
+  a {
+    color: $byu-light-blue;
+
+    &:hover {
+      color: $white;
+    }
+  }
+}

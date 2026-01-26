@@ -1,0 +1,156 @@
+@import 'colors';
+
+// Enhanced Header Styles
+header {
+  background: linear-gradient(
+    90deg,
+    rgba($byu-navy, 0.98) 0%,
+    rgba($byu-royal, 0.95) 100%
+  );
+  box-shadow: 0 4px 20px rgba($byu-navy, 0.3);
+}
+
+.header-top {
+  font-size: 0.8rem;
+  letter-spacing: 0.5px;
+  opacity: 0.9;
+}
+
+.header-divider {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+}
+
+.logo-badge {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  padding: 6px 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  backdrop-filter: blur(10px);
+}
+
+.nav-link-group {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.nav-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.15);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  color: $white;
+  padding: 8px 14px;
+  border-radius: 24px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.25);
+    border-color: $white;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
+  }
+
+  i {
+    font-size: 1.2rem;
+  }
+}
+
+.header-accent {
+  width: 3px;
+  height: 32px;
+  background: linear-gradient(180deg, $byu-royal 0%, $byu-navy 100%);
+  border-radius: 2px;
+}
+
+// Hero Section
+.hero-gradient {
+  background: linear-gradient(135deg, $byu-navy 0%, $byu-royal 50%, $byu-royal 100%);
+}
+
+// Card Animations
+.card-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover {
+    transform: translateY(-12px) scale(1.03);
+    box-shadow: 0 25px 50px -12px rgba($byu-navy, 0.3);
+  }
+}
+
+// Gradient Text
+.gradient-text {
+  background: linear-gradient(135deg, $byu-navy 0%, $byu-royal 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+html.dark .gradient-text {
+  background: linear-gradient(135deg, $byu-light-blue 0%, $white 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+// Project Card
+.project-card {
+  background: $white;
+  border-left: 4px solid $byu-navy;
+  transition: all 0.3s ease;
+
+  &:hover {
+    border-left-color: $byu-royal;
+    transform: translateX(8px);
+    box-shadow: 0 10px 30px rgba($byu-navy, 0.2);
+  }
+}
+
+// Cougar Emoji Animation
+.cougar-emoji {
+  font-size: 4rem;
+  animation: bounce 2s infinite;
+}
+
+// Animations
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-bounce {
+  animation: bounce 2s infinite;
+}
