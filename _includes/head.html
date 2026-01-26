@@ -1,0 +1,40 @@
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+<!-- Meta Title -->
+<title>
+    {%- if page.url == "/" -%}
+    {{ site.title }} - Premium VFH Services
+    {%- elsif page.title -%}
+    {{ page.title }} | {{ site.title }}
+    {%- else -%}
+    {{ site.title }}
+    {%- endif -%}
+</title>
+
+<!-- SEO Plugin -->
+{%- seo -%}
+
+<!-- Favicon -->
+<link rel="icon" type="image/x-icon" href="{{ '/favicon.ico' | relative_url }}">
+
+<!-- Tailwind CSS (built from input.css) -->
+<link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}" />
+<link rel="stylesheet" href="{{ '/assets/css/output.css' | relative_url }}" />
+
+<!-- Feather Icons -->
+<script src="https://unpkg.com/feather-icons"></script>
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<!-- RSS Feed -->
+<link rel="alternate" type="application/rss+xml" href="{{ site.url }}/feed.xml">
+
+<!-- Google Analytics -->
+{%- if jekyll.environment == 'production' and site.google_analytics -%}
+    {%- include google-analytics.html -%}
+{%- endif -%}
+</head>

@@ -1,0 +1,57 @@
+---
+# Main SCSS file for Jekyll - imports all partials
+---
+
+@import "byulabs/colors";
+@import "byulabs/typography";
+@import "byulabs/components";
+@import "byulabs/prose";
+@import "byulabs/responsive";
+
+// Smooth scrolling
+html {
+    scroll-behavior: smooth;
+}
+
+// Custom container
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+// Header and footer positioning
+header {
+    position: relative;
+    z-index: 1000;
+}
+
+footer {
+    background: #111;
+    
+    a {
+        color: #999;
+        text-decoration: none;
+        
+        &:hover {
+            color: #2563eb;
+        }
+    }
+}
+
+// Accessibility improvements
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+// Print styles
+@media print {
+    .cta-button,
+    button,
+    .nav-link {
+        display: none;
+    }
+}

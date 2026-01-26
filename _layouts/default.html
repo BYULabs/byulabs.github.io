@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: 'en' }}">
+  {%- include head.html -%}
+  <body class="bg-gray-50 text-gray-900 dark:bg-gray-950 dark:text-gray-100 transition-colors duration-300">
+    {%- include header.html -%}
+    <main>
+      {{ content }}
+    </main>
+    {%- include footer.html -%}
+    <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+    <script>
+    if (typeof feather !== 'undefined') {
+        feather.replace();
+    }
+    </script>
+  </body>
+</html>

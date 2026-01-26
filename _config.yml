@@ -1,0 +1,87 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely edit after that. If you find
+# yourself editing this file very often, consider using Jekyll's data files
+# feature for the data you need to update frequently.
+#
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+#
+# If you need help with YAML syntax, here are some quick references for you:
+# https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
+# https://learnxinyminutes.com/docs/yaml/
+#
+# Site settings
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
+
+title: Priv8Car - Premium VFH Services
+email: info@priv8car.com
+description: >-
+  Premium, safe, and reliable Vehicle For Hire services across Palm Beach County.
+  Licensed, insured, and dedicated to providing superior transportation experiences.
+baseurl: ""
+url: "http://www.priv8car.com"
+phone: "+15616994513"
+company_name: Priv8Car
+tagline: Premium VFH Services
+location: Palm Beach County, Florida
+permit: "PBC#VH2000"
+
+# Collections for Services and Locations
+collections:
+  services:
+    output: true
+    permalink: /services/:path/
+  locations:
+    output: true
+    permalink: /locations/:path/
+
+defaults:
+  - scope:
+      path: ""
+      type: "services"
+    values:
+      layout: "page"
+  - scope:
+      path: ""
+      type: "locations"
+    values:
+      layout: "page"
+
+# Build settings
+sass:
+  load_paths:
+    - _sass
+  style: compressed
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+include:
+  - _pages
+
+# Exclude from processing.
+# The following items will not be processed, by default.
+# Any item listed under the `exclude:` key here will be automatically added to
+# the internal "default list".
+#
+# Excluded items can be processed by explicitly listing the directories or
+# their entries' file path in the `include:` list.
+#
+# exclude:
+#   - .sass-cache/
+#   - .jekyll-cache/
+#   - gemfiles/
+#   - Gemfile
+#   - Gemfile.lock
+#   - node_modules/
+#   - vendor/bundle/
+#   - vendor/cache/
+#   - vendor/gems/
+#   - vendor/ruby/
