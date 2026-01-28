@@ -1,3 +1,23 @@
+// Active nav link highlighting
+function setActiveNavLink() {
+    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    const navLinks = document.querySelectorAll('.nav-link');
+    
+    navLinks.forEach(link => {
+        const href = link.getAttribute('href');
+        if (href === currentPage || (currentPage === '' && href === 'index.html')) {
+            link.classList.add('text-yellow-300');
+            link.classList.remove('text-white/90');
+        } else {
+            link.classList.remove('text-yellow-300');
+            link.classList.add('text-white/90');
+        }
+    });
+}
+
+// Call on page load
+document.addEventListener('DOMContentLoaded', setActiveNavLink);
+
 // Mobile Menu Toggle
 const mobileMenuBtn = document.getElementById('mobileMenuBtn');
 const mobileMenu = document.getElementById('mobileMenu');
@@ -47,25 +67,37 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // Initialize feather icons
 feather.replace();
 
-// Add scroll animations
+// Add scroll animations for fade-in elements
 const observerOptions = {
     threshold: 0.1,
     rootMargin: '0px 0px -50px 0px'
 };
 
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
+const fadeInObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry, index) => {
         if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
+            // Stagger animation for multiple elements
+            setTimeout(() => {
+                entry.target.classList.add('visible');
+            }, index * 50);
         }
     });
 }, observerOptions);
 
-// Observe elements for animation
+// Observe fade-in elements
+document.querySelectorAll('.fade-in').forEach(element => {
+    fadeInObserver.observe(element);
+});
+
+// Observe card-hover elements for animation
+const cardObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+        }
+    });
+}, observerOptions);
+
 document.querySelectorAll('.card-hover').forEach(card => {
-    card.style.opacity = '0';
-    card.style.transform = 'translateY(20px)';
-    card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-    observer.observe(card);
+    cardObserver.observe(card);
 });
