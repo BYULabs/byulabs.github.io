@@ -1,0 +1,230 @@
+---
+layout: default
+title: Projects
+permalink: /projects.html
+---
+
+<!-- Hero Section -->
+<section class="hero-gradient text-white py-32 relative overflow-hidden">
+    <div class="absolute inset-0 bg-black/10"></div>
+    <div class="container mx-auto px-4 relative z-10">
+        <div class="max-w-4xl fade-in">
+            <div class="inline-block mb-4">
+                <span class="inline-block bg-white/10 text-yellow-300 px-4 py-2 rounded-full text-sm font-semibold">THE LAB</span>
+            </div>
+            <h1 class="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+                Project <span class="gradient-text-enhanced">Archive</span>
+            </h1>
+            <p class="text-xl md:text-2xl opacity-90 leading-relaxed">
+                A comprehensive collection of all my coursework, assignments, side projects, and collaborative work. Organized by category and language for easy discovery.
+            </p>
+        </div>
+    </div>
+    <div class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white/5 to-transparent"></div>
+</section>
+
+<!-- Search/Filter Section -->
+<section class="py-16 bg-white dark:bg-byu-navy border-b border-byu-navy/10 dark:border-byu-royal/20 sticky top-[80px] z-40">
+    <div class="container mx-auto px-4 fade-in">
+        <div class="flex flex-col md:flex-row gap-6 items-center">
+            <div class="flex-1 w-full">
+                <div class="relative">
+                    <input type="text" id="searchInput" placeholder="Search projects..." class="w-full px-5 py-3 rounded-lg border border-byu-navy/20 dark:border-byu-royal/30 dark:bg-byu-royal/10 dark:text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-byu-royal transition-all">
+                    <i data-feather="search" class="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400"></i>
+                </div>
+            </div>
+            <div class="flex gap-3 flex-wrap">
+                <button class="filter-btn active px-4 py-2 rounded-full bg-byu-royal text-white font-semibold transition-all transform hover:scale-105" data-filter="all">All</button>
+                <button class="filter-btn px-4 py-2 rounded-full bg-gray-200 dark:bg-byu-royal/20 text-byu-navy dark:text-byu-light-blue font-semibold hover:bg-byu-royal hover:text-white hover:scale-105 transition-all" data-filter="assignment">Assignments</button>
+                <button class="filter-btn px-4 py-2 rounded-full bg-gray-200 dark:bg-byu-royal/20 text-byu-navy dark:text-byu-light-blue font-semibold hover:bg-byu-royal hover:text-white hover:scale-105 transition-all" data-filter="side-project">Side Projects</button>
+                <button class="filter-btn px-4 py-2 rounded-full bg-gray-200 dark:bg-byu-royal/20 text-byu-navy dark:text-byu-light-blue font-semibold hover:bg-byu-royal hover:text-white hover:scale-105 transition-all" data-filter="open-source">Open Source</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Projects Grid -->
+<section class="py-24 relative overflow-hidden">
+    <div class="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-byu-light-blue/10 to-transparent rounded-full -translate-x-1/2 -translate-y-1/2 dark:from-byu-royal/5"></div>
+    <div class="absolute bottom-0 right-0 w-96 h-96 bg-gradient-to-br from-byu-royal/10 to-transparent rounded-full translate-x-1/3 translate-y-1/3 dark:from-byu-royal/5"></div>
+    <div class="container mx-auto px-4 relative z-10">
+        <div id="projectsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- CSE 110 -->
+            <article class="group project-card project-item fade-in" data-category="assignment" data-language="python" data-search="cse 110 intro programming">
+                <div class="rounded-2xl shadow-lg p-8 dark:bg-byu-royal/20 border border-byu-navy/10 dark:border-byu-royal/30 relative overflow-hidden hover:shadow-2xl transition-all duration-300 h-full flex flex-col card-hover">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-byu-royal/20 to-transparent rounded-full -translate-y-1/2 translate-x-1/2 group-hover:scale-150 transition-transform duration-500"></div>
+                    <div class="flex items-center justify-between mb-6 relative z-10">
+                        <div>
+                            <h3 class="text-2xl font-bold text-byu-navy dark:text-white">CSE 110</h3>
+                            <p class="text-sm text-gray-600 dark:text-byu-light-blue font-medium">Intro to Programming</p>
+                        </div>
+                        <div class="inline-block bg-byu-royal/20 dark:bg-white/10 text-byu-royal dark:text-byu-light-blue px-3 py-1 rounded-full text-xs font-semibold">Assignment</div>
+                    </div>
+                    <p class="text-gray-600 dark:text-white/80 mb-6 leading-relaxed flex-1">Introduction to programming fundamentals with Python. Covers variables, decisions, calculations, loops, arrays, and input/output to solve problems.</p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="bg-byu-navy/10 dark:bg-byu-royal/30 text-byu-navy dark:text-byu-light-blue text-xs font-semibold px-3 py-1 rounded-full">Python</span>
+                        <span class="bg-byu-navy/10 dark:bg-byu-royal/30 text-byu-navy dark:text-byu-light-blue text-xs font-semibold px-3 py-1 rounded-full">Fundamentals</span>
+                        <span class="bg-byu-navy/10 dark:bg-byu-royal/30 text-byu-navy dark:text-byu-light-blue text-xs font-semibold px-3 py-1 rounded-full">Logic</span>
+                    </div>
+                    <a href="https://github.com/BYULabs/cse110" target="_blank" class="inline-flex items-center text-byu-navy dark:text-byu-light-blue hover:text-byu-royal dark:hover:text-white font-bold group-hover:translate-x-2 transition-all">
+                        <span>View on GitHub</span>
+                        <i data-feather="arrow-right" class="w-4 h-4 ml-2"></i>
+                    </a>
+                </div>
+            </article>
+            
+            <!-- WDD 130 -->
+            <article class="group project-card project-item fade-in" data-category="assignment" data-language="html-css" data-search="wdd 130 web fundamentals">
+                <div class="rounded-2xl shadow-lg p-8 dark:bg-byu-royal/20 border border-byu-navy/10 dark:border-byu-royal/30 relative overflow-hidden hover:shadow-2xl transition-all duration-300 h-full flex flex-col card-hover">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-byu-royal/20 to-transparent rounded-full -translate-y-1/2 translate-x-1/2 group-hover:scale-150 transition-transform duration-500"></div>
+                    <div class="flex items-center justify-between mb-6 relative z-10">
+                        <div>
+                            <h3 class="text-2xl font-bold text-byu-navy dark:text-white">WDD 130</h3>
+                            <p class="text-sm text-gray-600 dark:text-byu-light-blue font-medium">Web Fundamentals</p>
+                        </div>
+                        <div class="inline-block bg-byu-royal/20 dark:bg-white/10 text-byu-royal dark:text-byu-light-blue px-3 py-1 rounded-full text-xs font-semibold">Assignment</div>
+                    </div>
+                    <p class="text-gray-600 dark:text-white/80 mb-6 leading-relaxed flex-1">Introduction to web design and development. Hands-on experience with web design principles, HTML, CSS, and foundational web development concepts.</p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="bg-byu-navy/10 dark:bg-byu-royal/30 text-byu-navy dark:text-byu-light-blue text-xs font-semibold px-3 py-1 rounded-full">HTML</span>
+                        <span class="bg-byu-navy/10 dark:bg-byu-royal/30 text-byu-navy dark:text-byu-light-blue text-xs font-semibold px-3 py-1 rounded-full">CSS</span>
+                        <span class="bg-byu-navy/10 dark:bg-byu-royal/30 text-byu-navy dark:text-byu-light-blue text-xs font-semibold px-3 py-1 rounded-full">Design</span>
+                    </div>
+                    <a href="https://github.com/BYULabs/wdd130" target="_blank" class="inline-flex items-center text-byu-navy dark:text-byu-light-blue hover:text-byu-royal dark:hover:text-white font-bold group-hover:translate-x-2 transition-all">
+                        <span>View on GitHub</span>
+                        <i data-feather="arrow-right" class="w-4 h-4 ml-2"></i>
+                    </a>
+                </div>
+            </article>
+            
+            <!-- CSE 111 -->
+            <article class="group project-card project-item fade-in" data-category="assignment" data-language="python" data-search="cse 111 programming functions">
+                <div class="rounded-2xl shadow-lg p-8 dark:bg-byu-royal/20 border border-byu-navy/10 dark:border-byu-royal/30 relative overflow-hidden hover:shadow-2xl transition-all duration-300 h-full flex flex-col card-hover">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-byu-royal/20 to-transparent rounded-full -translate-y-1/2 translate-x-1/2 group-hover:scale-150 transition-transform duration-500"></div>
+                    <div class="flex items-center justify-between mb-6 relative z-10">
+                        <div>
+                            <h3 class="text-2xl font-bold text-byu-navy dark:text-white">CSE 111</h3>
+                            <p class="text-sm text-gray-600 dark:text-byu-light-blue font-medium">Programming with Functions</p>
+                        </div>
+                        <div class="inline-block bg-byu-royal/20 dark:bg-white/10 text-byu-royal dark:text-byu-light-blue px-3 py-1 rounded-full text-xs font-semibold">Assignment</div>
+                    </div>
+                    <p class="text-gray-600 dark:text-white/80 mb-6 leading-relaxed flex-1">Advanced programming with functions. Learn to research and call existing functions, write and debug custom functions, handle errors, and solve problems across multiple disciplines.</p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="bg-byu-navy/10 dark:bg-byu-royal/30 text-byu-navy dark:text-byu-light-blue text-xs font-semibold px-3 py-1 rounded-full">Python</span>
+                        <span class="bg-byu-navy/10 dark:bg-byu-royal/30 text-byu-navy dark:text-byu-light-blue text-xs font-semibold px-3 py-1 rounded-full">Functions</span>
+                        <span class="bg-byu-navy/10 dark:bg-byu-royal/30 text-byu-navy dark:text-byu-light-blue text-xs font-semibold px-3 py-1 rounded-full">Testing</span>
+                    </div>
+                    <a href="https://github.com/BYULabs/cse111" target="_blank" class="inline-flex items-center text-byu-navy dark:text-byu-light-blue hover:text-byu-royal dark:hover:text-white font-bold group-hover:translate-x-2 transition-all">
+                        <span>View on GitHub</span>
+                        <i data-feather="arrow-right" class="w-4 h-4 ml-2"></i>
+                    </a>
+                </div>
+            </article>
+            
+            <!-- BYULabs Site (Side Project) -->
+            <article class="group project-card project-item fade-in" data-category="side-project" data-language="html-css-javascript" data-search="byulabs portfolio website">
+                <div class="rounded-2xl shadow-lg p-8 dark:bg-byu-royal/20 border border-byu-navy/10 dark:border-byu-royal/30 relative overflow-hidden hover:shadow-2xl transition-all duration-300 h-full flex flex-col card-hover">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-byu-royal/20 to-transparent rounded-full -translate-y-1/2 translate-x-1/2 group-hover:scale-150 transition-transform duration-500"></div>
+                    <div class="flex items-center justify-between mb-6 relative z-10">
+                        <div>
+                            <h3 class="text-2xl font-bold text-byu-navy dark:text-white">BYULabs</h3>
+                            <p class="text-sm text-gray-600 dark:text-byu-light-blue font-medium">This Site!</p>
+                        </div>
+                        <div class="inline-block bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 px-3 py-1 rounded-full text-xs font-semibold">Side Project</div>
+                    </div>
+                    <p class="text-gray-600 dark:text-white/80 mb-6 leading-relaxed flex-1">A multi-page academic hub showcasing BYU coursework, projects, and student resources. Built with Jekyll, Tailwind CSS, and a focus on clean, responsive design and dark mode support.</p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="bg-byu-navy/10 dark:bg-byu-royal/30 text-byu-navy dark:text-byu-light-blue text-xs font-semibold px-3 py-1 rounded-full">Jekyll</span>
+                        <span class="bg-byu-navy/10 dark:bg-byu-royal/30 text-byu-navy dark:text-byu-light-blue text-xs font-semibold px-3 py-1 rounded-full">Tailwind</span>
+                        <span class="bg-byu-navy/10 dark:bg-byu-royal/30 text-byu-navy dark:text-byu-light-blue text-xs font-semibold px-3 py-1 rounded-full">Design</span>
+                    </div>
+                    <a href="https://github.com/BYULabs/byulabs.github.io" target="_blank" class="inline-flex items-center text-byu-navy dark:text-byu-light-blue hover:text-byu-royal dark:hover:text-white font-bold group-hover:translate-x-2 transition-all">
+                        <span>View on GitHub</span>
+                        <i data-feather="arrow-right" class="w-4 h-4 ml-2"></i>
+                    </a>
+                </div>
+            </article>
+        </div>
+
+        <!-- Empty State -->
+        <div id="emptyState" class="hidden text-center py-24 fade-in">
+            <div class="text-6xl mb-6">🔍</div>
+            <h3 class="text-3xl font-bold text-byu-navy dark:text-white mb-4">No Projects Found</h3>
+            <p class="text-lg text-gray-600 dark:text-byu-light-blue">Try adjusting your search or filters</p>
+        </div>
+    </div>
+</section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const projectItems = document.querySelectorAll('.project-item');
+    const searchInput = document.getElementById('searchInput');
+    const emptyState = document.getElementById('emptyState');
+
+    function filterProjects() {
+        const activeFilter = document.querySelector('.filter-btn.active').dataset.filter;
+        const searchTerm = searchInput.value.toLowerCase();
+        let visibleCount = 0;
+
+        projectItems.forEach(item => {
+            const itemCategory = item.dataset.category;
+            const itemSearch = item.dataset.search || '';
+            const categoryMatch = activeFilter === 'all' || itemCategory === activeFilter;
+            const searchMatch = itemSearch.includes(searchTerm);
+
+            if (categoryMatch && searchMatch) {
+                item.style.display = '';
+                item.classList.add('animate-fade-in');
+                visibleCount++;
+            } else {
+                item.style.display = 'none';
+                item.classList.remove('animate-fade-in');
+            }
+        });
+
+        emptyState.classList.toggle('hidden', visibleCount > 0);
+    }
+
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            filterBtns.forEach(b => b.classList.remove('active', 'bg-byu-royal', 'text-white'));
+            filterBtns.forEach(b => b.classList.add('bg-gray-200', 'dark:bg-byu-royal/20', 'text-byu-navy', 'dark:text-byu-light-blue'));
+            this.classList.add('active', 'bg-byu-royal', 'text-white');
+            this.classList.remove('bg-gray-200', 'dark:bg-byu-royal/20', 'text-byu-navy', 'dark:text-byu-light-blue');
+            filterProjects();
+        });
+    });
+
+    searchInput.addEventListener('input', filterProjects);
+});
+</script>
+
+<style>
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+    opacity: 0;
+}
+
+.fade-in:nth-child(1) { animation-delay: 0s; }
+.fade-in:nth-child(2) { animation-delay: 0.1s; }
+.fade-in:nth-child(3) { animation-delay: 0.2s; }
+.fade-in:nth-child(4) { animation-delay: 0.3s; }
+.fade-in:nth-child(5) { animation-delay: 0.4s; }
+.fade-in:nth-child(6) { animation-delay: 0.5s; }
+
+.animate-fade-in {
+    animation: fadeIn 0.3s ease-out;
+}
+</style>
