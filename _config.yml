@@ -18,39 +18,15 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Priv8Car - Premium VFH Services
-email: info@priv8car.com
+title: BYULabs
+email: byulabs@itusebastian.com
 description: >-
-  Premium, safe, and reliable Vehicle For Hire services across Palm Beach County.
-  Licensed, insured, and dedicated to providing superior transportation experiences.
+  BYULabs is a software development lab based in Provo, Utah. We specialize in building custom software solutions for businesses of all sizes, helping them leverage technology to achieve their goals.
+author:
+  name: "Sebastián Iturralde"
+  url: "https://itusebastian.com"
 baseurl: ""
-url: "http://www.priv8car.com"
-phone: "+15616994513"
-company_name: Priv8Car
-tagline: Premium VFH Services
-location: Palm Beach County, Florida
-permit: "PBC#VH2000"
-
-# Collections for Services and Locations
-collections:
-  services:
-    output: true
-    permalink: /services/:path/
-  locations:
-    output: true
-    permalink: /locations/:path/
-
-defaults:
-  - scope:
-      path: ""
-      type: "services"
-    values:
-      layout: "page"
-  - scope:
-      path: ""
-      type: "locations"
-    values:
-      layout: "page"
+url: "http://byulabs.github.io"
 
 # Build settings
 sass:
