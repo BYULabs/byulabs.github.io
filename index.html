@@ -125,49 +125,36 @@ title: Home
             </p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-            <!-- Fabrication Unit -->
+            {% for project in site.data.projects limit:2 %}
+            {% assign badge_colors = 'orange|orange-100|orange-900|orange-700|orange-400,blue|blue-100|blue-900|blue-700|blue-400,amber|amber-100|amber-900|amber-700|amber-400,red|red-100|red-900|red-700|red-400,purple|purple-100|purple-900|purple-700|purple-400,pink|pink-100|pink-900|pink-700|pink-400,indigo|indigo-100|indigo-900|indigo-700|indigo-400,gray|gray-100|gray-900|gray-700|gray-400' | split: ',' %}
+            {% assign color_match = badge_colors | where_exp: 'item', "item contains project.badge_color" | first | split: '|' %}
+            {% assign gradient_color = color_match[0] | default: 'byu-royal' %}
+            {% assign bg_light = color_match[1] | default: 'orange-100' %}
+            {% assign bg_dark = color_match[2] | default: 'orange-900' %}
+            {% assign text_light = color_match[3] | default: 'orange-700' %}
+            {% assign text_dark = color_match[4] | default: 'orange-400' %}
+
             <article class="group project-card rounded-2xl shadow-lg p-8 dark:bg-byu-royal/20 border border-byu-navy/10 dark:border-byu-royal/30 relative overflow-hidden hover:shadow-2xl transition-all duration-300 fade-in project-card-enhanced">
-                <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-byu-royal/20 to-transparent rounded-full -translate-y-1/2 translate-x-1/2 group-hover:scale-150 transition-transform duration-500"></div>
+                <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-{{ gradient_color }}-500/20 to-transparent rounded-full -translate-y-1/2 translate-x-1/2 group-hover:scale-150 transition-transform duration-500"></div>
                 <div class="flex items-center justify-between mb-6 relative z-10">
                     <div>
-                        <h3 class="text-2xl font-bold text-byu-navy dark:text-white">Fabrication Unit</h3>
-                        <p class="text-sm text-gray-600 dark:text-byu-light-blue font-medium">DOM Practice Project</p>
+                        <h3 class="text-2xl font-bold text-byu-navy dark:text-white">{{ project.name }}</h3>
+                        <p class="text-sm text-gray-600 dark:text-byu-light-blue font-medium">{{ project.subtitle }}</p>
                     </div>
-                    <div class="inline-block bg-orange-100 dark:bg-orange-900/30 text-orange-700 dark:text-orange-400 px-3 py-1 rounded-full text-xs font-semibold">Project</div>
+                    <div class="inline-block bg-{{ bg_light }} dark:bg-{{ bg_dark }}/30 text-{{ text_light }} dark:text-{{ text_dark }} px-3 py-1 rounded-full text-xs font-semibold">{{ project.badge }}</div>
                 </div>
-                <p class="text-gray-600 dark:text-white/80 mb-6 leading-relaxed">A hands-on DOM manipulation project built to practice JavaScript from WDD 131. Features interactive controls, dynamic content updates, and real-time UI state management. Fully responsive with Tailwind CSS and hosted live on GitHub Pages.</p>
+                <p class="text-gray-600 dark:text-white/80 mb-6 leading-relaxed">{{ project.description }}</p>
                 <div class="flex flex-wrap gap-2 mb-6">
-                    <span class="bg-byu-navy/10 dark:bg-byu-royal/30 text-byu-navy dark:text-byu-light-blue text-xs font-semibold px-3 py-1 rounded-full">JavaScript</span>
-                    <span class="bg-byu-navy/10 dark:bg-byu-royal/30 text-byu-navy dark:text-byu-light-blue text-xs font-semibold px-3 py-1 rounded-full">HTML</span>
-                    <span class="bg-byu-navy/10 dark:bg-byu-royal/30 text-byu-navy dark:text-byu-light-blue text-xs font-semibold px-3 py-1 rounded-full">Tailwind</span>
+                    {% for tech in project.technologies %}
+                    <span class="bg-byu-navy/10 dark:bg-byu-royal/30 text-byu-navy dark:text-byu-light-blue text-xs font-semibold px-3 py-1 rounded-full">{{ tech }}</span>
+                    {% endfor %}
                 </div>
-                <a href="https://byulabs.github.io/fabrication-unit" target="_blank" class="inline-flex items-center text-byu-royal dark:text-byu-light-blue hover:text-byu-navy dark:hover:text-white font-bold group-hover:translate-x-2 transition-all">
-                    <span>View Live Demo</span>
+                <a href="{{ project.link }}" target="_blank" class="inline-flex items-center text-byu-royal dark:text-byu-light-blue hover:text-byu-navy dark:hover:text-white font-bold group-hover:translate-x-2 transition-all">
+                    <span>{{ project.link_text }}</span>
                     <i data-feather="external-link" class="w-4 h-4 ml-2"></i>
                 </a>
             </article>
-            
-            <!-- BYULabs Site -->
-            <article class="group project-card rounded-2xl shadow-lg p-8 dark:bg-byu-royal/20 border border-byu-navy/10 dark:border-byu-royal/30 relative overflow-hidden hover:shadow-2xl transition-all duration-300 fade-in project-card-enhanced">
-                <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-byu-royal/20 to-transparent rounded-full -translate-y-1/2 translate-x-1/2 group-hover:scale-150 transition-transform duration-500"></div>
-                <div class="flex items-center justify-between mb-6 relative z-10">
-                    <div>
-                        <h3 class="text-2xl font-bold text-byu-navy dark:text-white">BYULabs</h3>
-                        <p class="text-sm text-gray-600 dark:text-byu-light-blue font-medium">This Site!</p>
-                    </div>
-                    <div class="inline-block bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 px-3 py-1 rounded-full text-xs font-semibold">Project</div>
-                </div>
-                <p class="text-gray-600 dark:text-white/80 mb-6 leading-relaxed">A multi-page academic hub showcasing BYU coursework, projects, and student resources. Built with Jekyll, Tailwind CSS, and a focus on clean, responsive design and dark mode support.</p>
-                <div class="flex flex-wrap gap-2 mb-6">
-                    <span class="bg-byu-navy/10 dark:bg-byu-royal/30 text-byu-navy dark:text-byu-light-blue text-xs font-semibold px-3 py-1 rounded-full">Jekyll</span>
-                    <span class="bg-byu-navy/10 dark:bg-byu-royal/30 text-byu-navy dark:text-byu-light-blue text-xs font-semibold px-3 py-1 rounded-full">Tailwind</span>
-                    <span class="bg-byu-navy/10 dark:bg-byu-royal/30 text-byu-navy dark:text-byu-light-blue text-xs font-semibold px-3 py-1 rounded-full">Design</span>
-                </div>
-                <a href="https://github.com/BYULabs/byulabs.github.io" target="_blank" class="inline-flex items-center text-byu-navy dark:text-byu-light-blue hover:text-byu-royal dark:hover:text-white font-bold group-hover:translate-x-2 transition-all">
-                    <span>View on GitHub</span>
-                    <i data-feather="arrow-right" class="w-4 h-4 ml-2"></i>
-                </a>
-            </article>
+            {% endfor %}
         </div>
         
         <div class="text-center">

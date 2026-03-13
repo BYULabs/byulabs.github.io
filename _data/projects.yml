@@ -1,0 +1,150 @@
+- id: fabrication-unit
+  name: Fabrication Unit
+  subtitle: DOM Practice Project
+  category: open-source
+  description: A hands-on DOM manipulation project built to practice JavaScript from WDD 131. Features interactive controls, dynamic content updates, and real-time UI state management. Fully responsive with Tailwind CSS and hosted live on GitHub Pages.
+  technologies:
+    - JavaScript
+    - HTML
+    - Tailwind
+  link: https://byulabs.github.io/fabrication-unit
+  link_text: View Live Demo
+  link_type: external
+  badge: Project
+  badge_color: orange
+
+- id: donut-terapia
+  name: Donut Terapia
+  subtitle: Artisan Donuts E-commerce
+  category: client-work
+  description: Complete e-commerce platform for Donut Terapia featuring a fully functional shopping cart built with JavaScript. Allows customers to browse products and send orders directly to WhatsApp. Built with Jekyll and Tailwind CSS for a modern, seamless shopping experience.
+  technologies:
+    - Jekyll
+    - Tailwind
+    - JavaScript
+    - E-commerce
+  link: https://donutterapia.com
+  link_text: Visit Site
+  link_type: external
+  badge: Full Stack
+  badge_color: pink
+
+- id: priv8car
+  name: Priv8Car
+  subtitle: Luxury Vehicle Services
+  category: side-project
+  description: Premium website for a VFH (Vehicle for Hire) business based in Florida. Built with Jekyll and Tailwind CSS, showcasing luxury transportation services with an elegant, high-end design that reflects the premium nature of the business.
+  technologies:
+    - Jekyll
+    - Tailwind
+    - Luxury
+  link: https://priv8car.com
+  link_text: Visit Site
+  link_type: external
+  badge: Premium
+  badge_color: gray
+
+- id: relato-corto
+  name: Relato Corto
+  subtitle: Fiction Stories Collection
+  category: side-project
+  description: A curated collection of fictional short stories by Sebastián Iturralde. Custom-built with Jekyll, Tailwind, and SCSS to provide an elegant reading experience. Features beautiful typography and responsive design for story discovery and enjoyment.
+  technologies:
+    - Jekyll
+    - Tailwind
+    - SCSS
+  link: https://relatocorto.com
+  link_text: Visit Site
+  link_type: external
+  badge: Creative
+  badge_color: indigo
+
+- id: byulabs-site
+  name: BYULabs
+  subtitle: This Site!
+  category: side-project
+  description: A multi-page academic hub showcasing BYU coursework, projects, and student resources. Built with Jekyll, Tailwind CSS, and a focus on clean, responsive design and dark mode support.
+  technologies:
+    - Jekyll
+    - Tailwind
+    - Design
+  link: https://github.com/BYULabs/byulabs.github.io
+  link_text: View on GitHub
+  link_type: github
+  badge: Project
+  badge_color: green
+
+- id: coffee-solutions
+  name: Coffee Solutions
+  subtitle: Support & Sales Platform
+  category: client-work
+  description: Original custom-built platform for a coffee machine support and sales company. Built with Tailwind and Jekyll, featuring service catalogs, customer support resources, and product showcases with a modern, professional interface.
+  technologies:
+    - Jekyll
+    - Tailwind
+    - Original Design
+  link: https://coffeesolutions.ec
+  link_text: Visit Site
+  link_type: external
+  badge: Custom Build
+  badge_color: amber
+
+- id: ceep
+  name: CEEP
+  subtitle: Business Council of Ecuador-Panama
+  category: client-work
+  description: Official website for Ecuador's business council overseeing trade negotiations with Panama. Custom-built with Tailwind and Jekyll, serving as the central resource hub for agreements, negotiations, and official public information with institutional credibility.
+  technologies:
+    - Jekyll
+    - Tailwind
+    - Institutional
+  link: https://ceep.com.ec
+  link_text: Visit Site
+  link_type: external
+  badge: Government
+  badge_color: red
+
+- id: reprunisa
+  name: Repruni
+  subtitle: Law Firm in Guayaquil
+  category: client-work
+  description: Professional website for a prestigious law firm based in Guayaquil. Built with Jekyll and SCSS, presenting their legal services, team expertise, and contact information with a sophisticated, trustworthy design.
+  technologies:
+    - Jekyll
+    - SCSS
+    - Professional
+  link: https://reprunisa.com
+  link_text: Visit Site
+  link_type: external
+  badge: Client
+  badge_color: purple
+
+- id: ascaso
+  name: Ascaso
+  subtitle: Coffee Machine Brand
+  category: client-work
+  description: A professional rebuild of Ascaso's premium coffee machine brand website with Jekyll and SCSS. Highlights their luxury equipment catalog and technical specifications with an elegant, high-end aesthetic.
+  technologies:
+    - Jekyll
+    - SCSS
+    - Premium Design
+  link: https://ascaso.ec
+  link_text: Visit Site
+  link_type: external
+  badge: Client
+  badge_color: blue
+
+- id: dr-coffee-ecuador
+  name: Dr Coffee Ecuador
+  subtitle: Coffee Company Site
+  category: client-work
+  description: A modernized replica of Dr Coffee's main website, rebuilt with Jekyll and SCSS for better performance and maintainability. Showcases their coffee products and brand story with a clean, responsive design.
+  technologies:
+    - Jekyll
+    - SCSS
+    - Responsive
+  link: https://drcoffee.ec
+  link_text: Visit Site
+  link_type: external
+  badge: Client
+  badge_color: blue
