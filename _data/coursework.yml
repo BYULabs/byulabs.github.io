@@ -1,0 +1,51 @@
+- id: cse-210
+  code: CSE 210
+  title: Programming with Classes
+  status: in-progress
+  description: Object-oriented programming with classes in C#. Encapsulation, inheritance, polymorphism, and design patterns.
+  key_takeaway: Classes and objects organize code into logical, reusable components. OOP principles like inheritance and polymorphism reduce code duplication and improve maintainability.
+  technologies:
+    - C#
+    - OOP
+    - Classes
+
+- id: wdd-131
+  code: WDD 131
+  title: Dynamic Web Fundamentals
+  status: in-progress
+  description: Building dynamic websites with JavaScript. Learn to respond to events, update content dynamically, and create responsive user experiences.
+  key_takeaway: JavaScript brings interactivity to web pages. Event listeners and DOM manipulation are fundamental for creating dynamic user experiences.
+  technologies:
+    - JavaScript
+    - DOM
+    - Events
+
+- id: cse-111
+  code: CSE 111
+  title: Programming with Functions
+  status: completed
+  description: Advanced Python programming with functions. Functions, error handling, testing, and problem-solving across multiple disciplines.
+  key_takeaway: Functions and modularity are essential for scalable code. Writing testable code from the beginning prevents technical debt.
+  technologies:
+    - Python
+    - Functions
+
+- id: wdd-130
+  code: WDD 130
+  title: Web Fundamentals
+  status: completed
+  description: Foundation in web design and development. HTML, CSS, responsive design, and web design principles.
+  key_takeaway: Semantic HTML and accessible design are foundational. Mobile-first responsive design should always be considered from the start.
+  technologies:
+    - HTML
+    - CSS
+
+- id: cse-110
+  code: CSE 110
+  title: Intro to Programming
+  status: completed
+  description: Introduction to programming fundamentals with Python. Covers variables, decisions, calculations, loops, and arrays.
+  key_takeaway: Logic and problem-solving are more important than language syntax. Python's readability makes learning programming concepts intuitive.
+  technologies:
+    - Python
+    - Fundamentals
