@@ -16,7 +16,7 @@ permalink: /projects.html
                 Project <span class="gradient-text-enhanced">Archive</span>
             </h1>
             <p class="text-xl md:text-2xl opacity-90 leading-relaxed">
-                A comprehensive collection of all my coursework, assignments, side projects, and collaborative work. Organized by category and language for easy discovery.
+                A showcase of side projects, collaborative work, and open-source contributions. These are independent projects beyond coursework that demonstrate my skills and interests.
             </p>
         </div>
     </div>
@@ -35,7 +35,6 @@ permalink: /projects.html
             </div>
             <div class="flex gap-3 flex-wrap">
                 <button class="filter-btn active px-4 py-2 rounded-full bg-byu-royal text-white font-semibold transition-all transform hover:scale-105" data-filter="all">All</button>
-                <button class="filter-btn px-4 py-2 rounded-full bg-gray-200 dark:bg-byu-royal/20 text-byu-navy dark:text-byu-light-blue font-semibold hover:bg-byu-royal hover:text-white hover:scale-105 transition-all" data-filter="assignment">Assignments</button>
                 <button class="filter-btn px-4 py-2 rounded-full bg-gray-200 dark:bg-byu-royal/20 text-byu-navy dark:text-byu-light-blue font-semibold hover:bg-byu-royal hover:text-white hover:scale-105 transition-all" data-filter="side-project">Side Projects</button>
                 <button class="filter-btn px-4 py-2 rounded-full bg-gray-200 dark:bg-byu-royal/20 text-byu-navy dark:text-byu-light-blue font-semibold hover:bg-byu-royal hover:text-white hover:scale-105 transition-all" data-filter="open-source">Open Source</button>
             </div>
@@ -49,72 +48,24 @@ permalink: /projects.html
     <div class="absolute bottom-0 right-0 w-96 h-96 bg-gradient-to-br from-byu-royal/10 to-transparent rounded-full translate-x-1/3 translate-y-1/3 dark:from-byu-royal/5"></div>
     <div class="container mx-auto px-4 relative z-10">
         <div id="projectsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- CSE 110 -->
-            <article class="group project-card project-item fade-in" data-category="assignment" data-language="python" data-search="cse 110 intro programming">
+            <!-- Fabrication Unit -->
+            <article class="group project-card project-item fade-in" data-category="open-source" data-language="python" data-search="fabrication unit open source automation">
                 <div class="rounded-2xl shadow-lg p-8 dark:bg-byu-royal/20 border border-byu-navy/10 dark:border-byu-royal/30 relative overflow-hidden hover:shadow-2xl transition-all duration-300 h-full flex flex-col card-hover">
                     <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-byu-royal/20 to-transparent rounded-full -translate-y-1/2 translate-x-1/2 group-hover:scale-150 transition-transform duration-500"></div>
                     <div class="flex items-center justify-between mb-6 relative z-10">
                         <div>
-                            <h3 class="text-2xl font-bold text-byu-navy dark:text-white">CSE 110</h3>
-                            <p class="text-sm text-gray-600 dark:text-byu-light-blue font-medium">Intro to Programming</p>
+                            <h3 class="text-2xl font-bold text-byu-navy dark:text-white">Fabrication Unit</h3>
+                            <p class="text-sm text-gray-600 dark:text-byu-light-blue font-medium">Automation & Control</p>
                         </div>
-                        <div class="inline-block bg-byu-royal/20 dark:bg-white/10 text-byu-royal dark:text-byu-light-blue px-3 py-1 rounded-full text-xs font-semibold">Assignment</div>
+                        <div class="inline-block bg-orange-100 dark:bg-orange-900/30 text-orange-700 dark:text-orange-400 px-3 py-1 rounded-full text-xs font-semibold">Open Source</div>
                     </div>
-                    <p class="text-gray-600 dark:text-white/80 mb-6 leading-relaxed flex-1">Introduction to programming fundamentals with Python. Covers variables, decisions, calculations, loops, arrays, and input/output to solve problems.</p>
+                    <p class="text-gray-600 dark:text-white/80 mb-6 leading-relaxed flex-1">A hands-on DOM manipulation project built to practice JavaScript from WDD 131. Features interactive controls, dynamic content updates, and real-time UI state management. Fully responsive with Tailwind CSS and hosted live on GitHub Pages.</p>
                     <div class="flex flex-wrap gap-2 mb-6">
-                        <span class="bg-byu-navy/10 dark:bg-byu-royal/30 text-byu-navy dark:text-byu-light-blue text-xs font-semibold px-3 py-1 rounded-full">Python</span>
-                        <span class="bg-byu-navy/10 dark:bg-byu-royal/30 text-byu-navy dark:text-byu-light-blue text-xs font-semibold px-3 py-1 rounded-full">Fundamentals</span>
-                        <span class="bg-byu-navy/10 dark:bg-byu-royal/30 text-byu-navy dark:text-byu-light-blue text-xs font-semibold px-3 py-1 rounded-full">Logic</span>
-                    </div>
-                    <a href="https://github.com/BYULabs/cse110" target="_blank" class="inline-flex items-center text-byu-navy dark:text-byu-light-blue hover:text-byu-royal dark:hover:text-white font-bold group-hover:translate-x-2 transition-all">
-                        <span>View on GitHub</span>
-                        <i data-feather="arrow-right" class="w-4 h-4 ml-2"></i>
-                    </a>
-                </div>
-            </article>
-            
-            <!-- WDD 130 -->
-            <article class="group project-card project-item fade-in" data-category="assignment" data-language="html-css" data-search="wdd 130 web fundamentals">
-                <div class="rounded-2xl shadow-lg p-8 dark:bg-byu-royal/20 border border-byu-navy/10 dark:border-byu-royal/30 relative overflow-hidden hover:shadow-2xl transition-all duration-300 h-full flex flex-col card-hover">
-                    <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-byu-royal/20 to-transparent rounded-full -translate-y-1/2 translate-x-1/2 group-hover:scale-150 transition-transform duration-500"></div>
-                    <div class="flex items-center justify-between mb-6 relative z-10">
-                        <div>
-                            <h3 class="text-2xl font-bold text-byu-navy dark:text-white">WDD 130</h3>
-                            <p class="text-sm text-gray-600 dark:text-byu-light-blue font-medium">Web Fundamentals</p>
-                        </div>
-                        <div class="inline-block bg-byu-royal/20 dark:bg-white/10 text-byu-royal dark:text-byu-light-blue px-3 py-1 rounded-full text-xs font-semibold">Assignment</div>
-                    </div>
-                    <p class="text-gray-600 dark:text-white/80 mb-6 leading-relaxed flex-1">Introduction to web design and development. Hands-on experience with web design principles, HTML, CSS, and foundational web development concepts.</p>
-                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="bg-byu-navy/10 dark:bg-byu-royal/30 text-byu-navy dark:text-byu-light-blue text-xs font-semibold px-3 py-1 rounded-full">JavaScript</span>
                         <span class="bg-byu-navy/10 dark:bg-byu-royal/30 text-byu-navy dark:text-byu-light-blue text-xs font-semibold px-3 py-1 rounded-full">HTML</span>
-                        <span class="bg-byu-navy/10 dark:bg-byu-royal/30 text-byu-navy dark:text-byu-light-blue text-xs font-semibold px-3 py-1 rounded-full">CSS</span>
-                        <span class="bg-byu-navy/10 dark:bg-byu-royal/30 text-byu-navy dark:text-byu-light-blue text-xs font-semibold px-3 py-1 rounded-full">Design</span>
+                        <span class="bg-byu-navy/10 dark:bg-byu-royal/30 text-byu-navy dark:text-byu-light-blue text-xs font-semibold px-3 py-1 rounded-full">Tailwind</span>
                     </div>
-                    <a href="https://github.com/BYULabs/wdd130" target="_blank" class="inline-flex items-center text-byu-navy dark:text-byu-light-blue hover:text-byu-royal dark:hover:text-white font-bold group-hover:translate-x-2 transition-all">
-                        <span>View on GitHub</span>
-                        <i data-feather="arrow-right" class="w-4 h-4 ml-2"></i>
-                    </a>
-                </div>
-            </article>
-            
-            <!-- CSE 111 -->
-            <article class="group project-card project-item fade-in" data-category="assignment" data-language="python" data-search="cse 111 programming functions">
-                <div class="rounded-2xl shadow-lg p-8 dark:bg-byu-royal/20 border border-byu-navy/10 dark:border-byu-royal/30 relative overflow-hidden hover:shadow-2xl transition-all duration-300 h-full flex flex-col card-hover">
-                    <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-byu-royal/20 to-transparent rounded-full -translate-y-1/2 translate-x-1/2 group-hover:scale-150 transition-transform duration-500"></div>
-                    <div class="flex items-center justify-between mb-6 relative z-10">
-                        <div>
-                            <h3 class="text-2xl font-bold text-byu-navy dark:text-white">CSE 111</h3>
-                            <p class="text-sm text-gray-600 dark:text-byu-light-blue font-medium">Programming with Functions</p>
-                        </div>
-                        <div class="inline-block bg-byu-royal/20 dark:bg-white/10 text-byu-royal dark:text-byu-light-blue px-3 py-1 rounded-full text-xs font-semibold">Assignment</div>
-                    </div>
-                    <p class="text-gray-600 dark:text-white/80 mb-6 leading-relaxed flex-1">Advanced programming with functions. Learn to research and call existing functions, write and debug custom functions, handle errors, and solve problems across multiple disciplines.</p>
-                    <div class="flex flex-wrap gap-2 mb-6">
-                        <span class="bg-byu-navy/10 dark:bg-byu-royal/30 text-byu-navy dark:text-byu-light-blue text-xs font-semibold px-3 py-1 rounded-full">Python</span>
-                        <span class="bg-byu-navy/10 dark:bg-byu-royal/30 text-byu-navy dark:text-byu-light-blue text-xs font-semibold px-3 py-1 rounded-full">Functions</span>
-                        <span class="bg-byu-navy/10 dark:bg-byu-royal/30 text-byu-navy dark:text-byu-light-blue text-xs font-semibold px-3 py-1 rounded-full">Testing</span>
-                    </div>
-                    <a href="https://github.com/BYULabs/cse111" target="_blank" class="inline-flex items-center text-byu-navy dark:text-byu-light-blue hover:text-byu-royal dark:hover:text-white font-bold group-hover:translate-x-2 transition-all">
+                    <a href="https://github.com/BYULabs/fabrication-unit" target="_blank" class="inline-flex items-center text-byu-navy dark:text-byu-light-blue hover:text-byu-royal dark:hover:text-white font-bold group-hover:translate-x-2 transition-all">
                         <span>View on GitHub</span>
                         <i data-feather="arrow-right" class="w-4 h-4 ml-2"></i>
                     </a>
