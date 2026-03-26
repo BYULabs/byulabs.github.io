@@ -79,7 +79,10 @@ permalink: /coursework.html
                         <!-- Left Side (Desktop) -->
                         {% if is_left == 1 %}
                             <div class="order-1 md:order-0 w-full md:w-5/12 pr-0 md:pr-12 flex items-center justify-end">
-                                <div class="bg-white dark:bg-byu-royal/20 rounded-2xl shadow-lg hover:shadow-2xl p-8 {{ card_border }} w-full card-hover transition-all">
+                                {% if course.repo %}
+                                <a href="{{ course.repo }}" target="_blank" class="w-full">
+                                {% endif %}
+                                <div class="bg-white dark:bg-byu-royal/20 rounded-2xl shadow-lg hover:shadow-2xl p-8 {{ card_border }} w-full card-hover transition-all cursor-pointer">
                                     <div class="flex items-start justify-between mb-4">
                                         <div>
                                             <h3 class="text-2xl font-bold text-byu-navy dark:text-white">{{ course.code }}</h3>
@@ -87,17 +90,24 @@ permalink: /coursework.html
                                         </div>
                                         <span class="inline-block {{ status_bg }} {{ status_text_color }} px-3 py-1 rounded-full text-xs font-semibold whitespace-nowrap">{{ status_text }}</span>
                                     </div>
+                                    <div class="inline-flex items-center text-byu-royal dark:text-byu-light-blue hover:text-byu-navy dark:hover:text-white font-semibold text-sm transition-colors">
+                                        <i data-feather="github" class="w-4 h-4 mr-2"></i>
+                                        View Repository
+                                    </div>
                                     <p class="text-gray-600 dark:text-white/80 mb-4 leading-relaxed">{{ course.description }}</p>
                                     <div class="mb-4">
                                         <p class="text-sm font-semibold text-byu-navy dark:text-byu-light-blue mb-2">Key Takeaway:</p>
                                         <p class="text-sm text-gray-600 dark:text-white/70">{{ course.key_takeaway }}</p>
                                     </div>
-                                    <div class="flex flex-wrap gap-2">
+                                    <div class="flex flex-wrap gap-2 mb-4">
                                         {% for tech in course.technologies %}
                                             <span class="bg-byu-navy/10 dark:bg-byu-royal/30 text-byu-navy dark:text-byu-light-blue text-xs font-semibold px-3 py-1 rounded-full">{{ tech }}</span>
                                         {% endfor %}
                                     </div>
                                 </div>
+                                {% if course.repo %}
+                                </a>
+                                {% endif %}
                             </div>
                             
                             <!-- Center Dot -->
@@ -118,7 +128,10 @@ permalink: /coursework.html
 
                             <!-- Right Side (Desktop) -->
                             <div class="order-2 md:order-1 w-full md:w-5/12 pl-0 md:pl-12">
-                                <div class="bg-white dark:bg-byu-royal/20 rounded-2xl shadow-lg hover:shadow-2xl p-8 {{ card_border }} w-full card-hover transition-all">
+                                {% if course.repo %}
+                                <a href="{{ course.repo }}" target="_blank" class="w-full">
+                                {% endif %}
+                                <div class="bg-white dark:bg-byu-royal/20 rounded-2xl shadow-lg hover:shadow-2xl p-8 {{ card_border }} w-full card-hover transition-all cursor-pointer">
                                     <div class="flex items-start justify-between mb-4">
                                         <div>
                                             <h3 class="text-2xl font-bold text-byu-navy dark:text-white">{{ course.code }}</h3>
@@ -131,12 +144,19 @@ permalink: /coursework.html
                                         <p class="text-sm font-semibold text-byu-navy dark:text-byu-light-blue mb-2">Key Takeaway:</p>
                                         <p class="text-sm text-gray-600 dark:text-white/70">{{ course.key_takeaway }}</p>
                                     </div>
-                                    <div class="flex flex-wrap gap-2">
+                                    <div class="flex flex-wrap gap-2 mb-4">
                                         {% for tech in course.technologies %}
                                             <span class="bg-byu-navy/10 dark:bg-byu-royal/30 text-byu-navy dark:text-byu-light-blue text-xs font-semibold px-3 py-1 rounded-full">{{ tech }}</span>
                                         {% endfor %}
                                     </div>
+                                    <div class="inline-flex items-center text-byu-royal dark:text-byu-light-blue hover:text-byu-navy dark:hover:text-white font-semibold text-sm transition-colors">
+                                        <i data-feather="github" class="w-4 h-4 mr-2"></i>
+                                        View Repository
+                                    </div>
                                 </div>
+                                {% if course.repo %}
+                                </a>
+                                {% endif %}
                             </div>
                         {% endif %}
                     </div>

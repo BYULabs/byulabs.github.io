@@ -1,5 +1,6 @@
 - id: cse-210
   code: CSE 210
+  repo: https://github.com/BYULabs/cse210
   title: Programming with Classes
   status: in-progress
   description: Object-oriented programming with classes in C#. Encapsulation, inheritance, polymorphism, and design patterns.
@@ -11,6 +12,7 @@
 
 - id: wdd-131
   code: WDD 131
+  repo: https://github.com/BYULabs/wdd131
   title: Dynamic Web Fundamentals
   status: in-progress
   description: Building dynamic websites with JavaScript. Learn to respond to events, update content dynamically, and create responsive user experiences.
@@ -22,6 +24,7 @@
 
 - id: cse-111
   code: CSE 111
+  repo: https://github.com/BYULabs/cse111
   title: Programming with Functions
   status: completed
   description: Advanced Python programming with functions. Functions, error handling, testing, and problem-solving across multiple disciplines.
@@ -32,6 +35,7 @@
 
 - id: wdd-130
   code: WDD 130
+  repo: https://github.com/BYULabs/wdd130
   title: Web Fundamentals
   status: completed
   description: Foundation in web design and development. HTML, CSS, responsive design, and web design principles.
@@ -42,6 +46,7 @@
 
 - id: cse-110
   code: CSE 110
+  repo: https://github.com/BYULabs/cse110
   title: Intro to Programming
   status: completed
   description: Introduction to programming fundamentals with Python. Covers variables, decisions, calculations, loops, and arrays.
