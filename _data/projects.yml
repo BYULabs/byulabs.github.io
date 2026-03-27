@@ -1,3 +1,18 @@
+- id: ecublink
+  name: Ecublink
+  subtitle: Backlink Marketplace
+  category: side-project
+  description: A dynamic marketplace platform connecting bloggers and industries to buy and sell quality backlinks. Built with Laravel and Tailwind CSS, featuring secure transactions and an intuitive interface for managing link packages and partnerships.
+  technologies:
+    - Laravel
+    - Tailwind
+    - E-commerce
+  link: https://ecublink.com
+  link_text: Visit Site
+  link_type: external
+  badge: SaaS
+  badge_color: blue
+  
 - id: fabrication-unit
   name: Fabrication Unit
   subtitle: DOM Practice Project
@@ -148,3 +163,4 @@
   link_type: external
   badge: Client
   badge_color: blue
+
