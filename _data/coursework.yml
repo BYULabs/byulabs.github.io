@@ -1,8 +1,34 @@
+- id: wdd-231
+  code: WDD 231
+  repo: https://github.com/BYULabs/wdd231
+  title: Web Frontend Development I
+  status: in-progress
+  description: Builds on Dynamic Web Fundamentals to craft accessible, standards-compliant, high-performance interfaces and integrate basic APIs.
+  key_takeaway: Strong frontend work balances usability, accessibility, standards compliance, and performance while integrating data from APIs.
+  technologies:
+    - HTML
+    - CSS
+    - JavaScript
+    - APIs
+
+- id: itm-111
+  code: ITM 111
+  repo: https://github.com/BYULabs/itm111
+  title: Introduction to Databases
+  status: in-progress
+  description: Covers database fundamentals, data modeling, and inner/outer joins while using CASE tools to design, build, and query relational databases.
+  key_takeaway: Database design and querying depend on understanding relationships, joins, and schema modeling with practical tooling.
+  technologies:
+    - SQL
+    - Data Modeling
+    - DBMS
+    - CASE Tools
+
 - id: cse-210
   code: CSE 210
   repo: https://github.com/BYULabs/cse210
   title: Programming with Classes
-  status: in-progress
+  status: completed
   description: Object-oriented programming with classes in C#. Encapsulation, inheritance, polymorphism, and design patterns.
   key_takeaway: Classes and objects organize code into logical, reusable components. OOP principles like inheritance and polymorphism reduce code duplication and improve maintainability.
   technologies:
@@ -14,7 +40,7 @@
   code: WDD 131
   repo: https://github.com/BYULabs/wdd131
   title: Dynamic Web Fundamentals
-  status: in-progress
+  status: completed
   description: Building dynamic websites with JavaScript. Learn to respond to events, update content dynamically, and create responsive user experiences.
   key_takeaway: JavaScript brings interactivity to web pages. Event listeners and DOM manipulation are fundamental for creating dynamic user experiences.
   technologies:
