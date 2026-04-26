@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Coursework
-permalink: /coursework.html
+title: BYU Computer Science Timeline
+description: Explore my BYU coursework timeline, including completed classes, in-progress courses, key takeaways, and technologies learned.
 ---
 
 <!-- Hero Section -->
@@ -32,10 +32,10 @@ permalink: /coursework.html
                 <div>
                     <div class="flex justify-between items-center mb-2">
                         <span class="text-sm font-semibold text-gray-600 dark:text-byu-light-blue">Completed Courses</span>
-                        <span class="text-sm font-bold text-byu-royal dark:text-byu-light-blue">6/30 (19%)</span>
+                        <span class="text-sm font-bold text-byu-royal dark:text-byu-light-blue">23/90 (26%)</span>
                     </div>
                     <div class="w-full bg-gray-200 dark:bg-byu-royal/20 rounded-full h-4">
-                        <div class="bg-gradient-to-r from-byu-navy to-byu-royal h-4 rounded-full transition-all duration-500" style="width: 19%"></div>
+                        <div class="bg-gradient-to-r from-byu-navy to-byu-royal h-4 rounded-full transition-all duration-500" style="width: 26%"></div>
                     </div>
                 </div>
                 <p class="text-sm text-gray-600 dark:text-white/70">On track for successful degree completion. 2 courses currently in progress.</p>
@@ -139,6 +139,10 @@ permalink: /coursework.html
                                         </div>
                                         <span class="inline-block {{ status_bg }} {{ status_text_color }} px-3 py-1 rounded-full text-xs font-semibold whitespace-nowrap">{{ status_text }}</span>
                                     </div>
+                                    <div class="inline-flex items-center text-byu-royal dark:text-byu-light-blue hover:text-byu-navy dark:hover:text-white font-semibold text-sm transition-colors">
+                                        <i data-feather="github" class="w-4 h-4 mr-2"></i>
+                                        View Repository
+                                    </div>
                                     <p class="text-gray-600 dark:text-white/80 mb-4 leading-relaxed">{{ course.description }}</p>
                                     <div class="mb-4">
                                         <p class="text-sm font-semibold text-byu-navy dark:text-byu-light-blue mb-2">Key Takeaway:</p>
@@ -148,10 +152,6 @@ permalink: /coursework.html
                                         {% for tech in course.technologies %}
                                             <span class="bg-byu-navy/10 dark:bg-byu-royal/30 text-byu-navy dark:text-byu-light-blue text-xs font-semibold px-3 py-1 rounded-full">{{ tech }}</span>
                                         {% endfor %}
-                                    </div>
-                                    <div class="inline-flex items-center text-byu-royal dark:text-byu-light-blue hover:text-byu-navy dark:hover:text-white font-semibold text-sm transition-colors">
-                                        <i data-feather="github" class="w-4 h-4 mr-2"></i>
-                                        View Repository
                                     </div>
                                 </div>
                                 {% if course.repo %}
@@ -173,7 +173,7 @@ permalink: /coursework.html
         <h3 class="text-4xl md:text-5xl font-bold mb-6 gradient-text-enhanced">More Courses to Come</h3>
         <p class="text-xl opacity-90 mb-10 max-w-2xl mx-auto leading-relaxed">As I progress through my degree, I'll be adding more courses to this timeline. Check back regularly to see my latest work and journey through computer science!</p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <a href="/projects.html" class="inline-flex items-center justify-center bg-white text-byu-navy px-8 py-4 rounded-xl font-bold hover:shadow-2xl transition-all transform hover:scale-105 active:scale-95">
+            <a href="/{{ '/projects' | relative_url }}" class="inline-flex items-center justify-center bg-white text-byu-navy px-8 py-4 rounded-xl font-bold hover:shadow-2xl transition-all transform hover:scale-105 active:scale-95">
                 <span>Browse All Projects</span>
                 <i data-feather="arrow-right" class="w-5 h-5 ml-2"></i>
             </a>
