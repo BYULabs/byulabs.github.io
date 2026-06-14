@@ -20,12 +20,12 @@
 
 title: BYULabs
 email: byulabs@itusebastian.com
-description: Student-to-Engineer Journey at BYU
+description: Sebastián Iturralde | Software Developer Portfolio
 author:
   name: "Sebastián Iturralde"
   url: "https://itusebastian.com"
 baseurl: ""
-url: "http://byulabs.github.io"
+url: "https://byulabs.github.io"
 
 # Build settings
 sass:
