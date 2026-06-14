@@ -1,3 +1,136 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+* {
+    font-family: "JetBrains Mono", monospace;
+}
+
+body {
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease;
+}
+
+.dark body {
+    background-color: #0d1117;
+    color: #e6edf3;
+}
+.light body {
+    background-color: #f8fafc;
+    color: #1a202c;
+}
+
+.accent-text {
+    color: #3b82f6;
+}
+.accent-bg {
+    background-color: #3b82f6;
+}
+.accent-border {
+    border-color: #3b82f6;
+}
+
+/* Repo card */
+.repo-card {
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+}
+.repo-card:hover {
+    transform: translateY(-3px);
+}
+.dark .repo-card:hover {
+    border-color: rgba(59, 130, 246, 0.4);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+}
+.light .repo-card:hover {
+    border-color: rgba(59, 130, 246, 0.3);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+}
+
+/* Language dot */
+.lang-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+    flex-shrink: 0;
+}
+
+/* Skeleton loader */
+.skeleton {
+    background: linear-gradient(
+        90deg,
+        rgba(59, 130, 246, 0.05) 25%,
+        rgba(59, 130, 246, 0.1) 50%,
+        rgba(59, 130, 246, 0.05) 75%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+    border-radius: 6px;
+}
+@keyframes shimmer {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+/* Competency pill */
+.comp-pill {
+    transition: all 0.2s ease;
+}
+.comp-pill:hover {
+    transform: translateY(-1px);
+}
+.dark .comp-pill:hover {
+    background-color: rgba(59, 130, 246, 0.15);
+    border-color: rgba(59, 130, 246, 0.3);
+}
+.light .comp-pill:hover {
+    background-color: rgba(59, 130, 246, 0.08);
+    border-color: rgba(59, 130, 246, 0.2);
+}
+
+/* Stat hover */
+.stat-box {
+    transition: all 0.2s ease;
+}
+.stat-box:hover .stat-val {
+    color: #3b82f6;
+}
+.stat-val {
+    transition: color 0.2s ease;
+}
+
+/* Scroll fade */
+.fade-up {
+    opacity: 0;
+    transform: translateY(16px);
+    transition:
+        opacity 0.5s ease,
+        transform 0.5s ease;
+}
+.fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Error state */
+.error-state {
+    border-left: 3px solid #f59e0b;
+}
+
+/* Sort button active */
+.sort-btn.active {
+    color: #3b82f6;
+    border-color: rgba(59, 130, 246, 0.4);
+}
+.dark .sort-btn.active {
+    background-color: rgba(59, 130, 246, 0.1);
+}
+.light .sort-btn.active {
+    background-color: rgba(59, 130, 246, 0.06);
+}

@@ -1,3 +1,5 @@
+const plugin = require('tailwindcss/plugin');
+
 module.exports = {
   content: [
     './_includes/**/*.html',
@@ -5,22 +7,15 @@ module.exports = {
     './_pages/**/*.html',
     './_posts/**/*.html',
     './**/*.markdown',
-    './**/*.html',
-    './index.html',
+    './*.html',
     './src/**/*.{html,tsx,ts,jsx,js}',
+    './assets/js/*.js',
   ],
-  darkMode: 'class',
+  darkMode: ['selector', '[class~="dark"]'],
   theme: {
     extend: {
       fontFamily: {
         sans: ['system-ui', 'sans-serif'],
-      },
-      colors: {
-        'byu-navy': '#002E5D',
-        'byu-royal': '#0047BA',
-        'byu-light-blue': '#BDD6E6',
-        'byu-slate': '#7C878E',
-        'byu-light-gray': '#C7C9C7',
       },
       animation: {
         'float': 'float 6s ease-in-out infinite',
@@ -34,4 +29,9 @@ module.exports = {
       }
     },
   },
+  plugins: [
+    plugin(function({ addVariant }) {
+      addVariant('light', '.light &');
+    }),
+  ],
 }

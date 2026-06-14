@@ -1,0 +1,86 @@
+---
+layout: page
+---
+
+<!-- Navigation -->
+<div class="mb-8">
+  <div class="flex items-center gap-2 text-sm dark:text-gray-400 light:text-gray-600">
+    <a href="{{ '/blog' | relative_url }}" class="hover:dark:text-gray-300 hover:light:text-gray-800 transition-colors">
+      <i data-lucide="arrow-left" class="w-4 h-4 mr-2 inline"></i>
+      Blog
+    </a>
+    <span>•</span>
+    <a href="{{ '/categories' | relative_url }}" class="hover:dark:text-gray-300 hover:light:text-gray-800 transition-colors">
+      Categories
+    </a>
+    <span>•</span>
+    <span class="dark:text-gray-500 light:text-gray-500">{{ page.title }}</span>
+  </div>
+</div>
+
+<!-- Header -->
+<div class="mb-16 text-center max-w-3xl mx-auto">
+  <h1 class="text-3xl md:text-4xl font-bold mb-4 tracking-tight">
+    <span style="color: #3b82f6;">#</span> {{ page.title }}
+  </h1>
+  <p class="dark:text-gray-400 light:text-gray-600 text-base">
+    Posts in the "{{ page.title }}" category
+  </p>
+</div>
+
+<!-- Posts -->
+<div class="max-w-4xl mx-auto">
+  {% assign category_posts = site.posts | where_exp: "post", "post.categories contains page.title" | sort: "date" | reverse %}
+  
+  {% if category_posts.size > 0 %}
+    <div class="mb-16">
+      <h2 class="text-lg font-bold mb-6 dark:text-gray-300 light:text-gray-700">
+        {{ category_posts.size }} {% if category_posts.size == 1 %}Post{% else %}Posts{% endif %}
+      </h2>
+      
+      <div class="space-y-6">
+        {% for post in category_posts %}
+        <div class="blog-post-item">
+          <a href="{{ post.url | relative_url }}" class="blog-post-link block py-2">
+            <div class="flex flex-col sm:flex-row sm:items-start gap-2">
+              <span class="dark:text-gray-500 light:text-gray-500 text-sm min-w-[120px]">[{{ post.date | date: "%Y-%m-%d" }}]</span>
+              <span class="font-medium text-base">{{ post.title }}</span>
+            </div>
+          </a>
+          {% if post.excerpt %}
+          <p class="dark:text-gray-400 light:text-gray-600 text-sm mt-1 ml-[120px]">
+            {{ post.excerpt | strip_html | truncatewords: 20 }}
+          </p>
+          {% endif %}
+          {% if post.tags %}
+          <div class="flex flex-wrap gap-1 mt-2 ml-[120px]">
+            {% for tag in post.tags %}
+            <a href="{{ '/tags/' | relative_url }}{{ tag | slugify }}/" class="inline-block px-2 py-0.5 text-xs rounded dark:bg-gray-800/50 light:bg-gray-100 dark:text-gray-400 light:text-gray-600 hover:dark:bg-gray-700 hover:light:bg-gray-200 transition-colors">
+              {{ tag }}
+            </a>
+            {% endfor %}
+          </div>
+          {% endif %}
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  {% else %}
+    <div class="dark:text-gray-400 light:text-gray-600 py-8 text-center">
+      <p>No posts in this category yet.</p>
+    </div>
+  {% endif %}
+  
+  <!-- Additional Navigation -->
+  <div class="mt-12 pt-8 border-t dark:border-gray-800 light:border-gray-200">
+    <div class="flex flex-col sm:flex-row gap-4 text-center sm:text-left">
+      <a href="{{ '/categories' | relative_url }}" class="dark:text-gray-400 light:text-gray-600 hover:dark:text-gray-300 hover:light:text-gray-800 transition-colors text-sm">
+        ← View All Categories
+      </a>
+      <span class="dark:text-gray-600 light:text-gray-400">•</span>
+      <a href="{{ '/tags' | relative_url }}" class="dark:text-gray-400 light:text-gray-600 hover:dark:text-gray-300 hover:light:text-gray-800 transition-colors text-sm">
+        Browse by Tags →
+      </a>
+    </div>
+  </div>
+</div>

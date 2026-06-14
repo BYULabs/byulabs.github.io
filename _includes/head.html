@@ -1,123 +1,33 @@
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Meta Title -->
-    <title>
-        {%- if page.url == "/" -%}
-        {{ site.title }} | {{ site.description }}
-        {%- elsif page.title -%}
-        {{ page.title }} | {{ site.title }}
-        {%- else -%}
-        {{ site.title }}
-        {%- endif -%}
-    </title>
-
-    <!-- SEO Plugin -->
-    {%- seo -%}
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="{{ 'assets/images/byu-cougars-logo.svg' | relative_url }}">
-
-    <!-- Tailwind CSS (built from input.css) -->
-    <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}" />
-    <link rel="stylesheet" href="{{ '/assets/css/output.css' | relative_url }}" />
-
-    <!-- Feather Icons -->
-    <script src="https://unpkg.com/feather-icons"></script>
-
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <!-- Enhanced CSS Features -->
-    <style>
-        html {
-            scroll-behavior: smooth;
-        }
-
-        .gradient-text-enhanced {
-            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 50%, #06b6d4 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            animation: gradient-shift 6s ease-in-out infinite;
-        }
-
-        @keyframes gradient-shift {
-            0%, 100% { 
-                background-position: 0% 50%;
-            }
-            50% { 
-                background-position: 100% 50%;
-            }
-        }
-
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.6s ease-out;
-        }
-
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .card-hover {
-            transition: all 0.3s ease;
-        }
-
-        .card-hover:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-        }
-
-        .dark .card-hover:hover {
-            box-shadow: 0 20px 40px rgba(59, 130, 246, 0.15);
-        }
-
-        .floating {
-            animation: float 6s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-        }
-
-        .group-hover-scale:group-hover {
-            transform: scale(1.05);
-        }
-
-        /* Enhanced project card with smooth transitions */
-        .project-card-enhanced {
-            transition: all 0.3s ease;
-        }
-
-        .project-card-enhanced:hover {
-            transform: translateY(-8px);
-        }
-
-        .project-card-enhanced:hover img {
-            transform: scale(1.1);
-        }
-
-        .project-card-enhanced img {
-            transition: transform 0.5s ease;
-        }
-
-        /* Smooth scroll for navigation */
-        a[href^="#"] {
-            scroll-behavior: smooth;
-        }
-    </style>
-
-    <!-- RSS Feed -->
-    <link rel="alternate" type="application/rss+xml" href="{{ site.url }}/feed.xml">
-
-    <!-- Google Analytics -->
-    {%- if jekyll.environment == 'production' and site.google_analytics -%}
-        {%- include google-analytics.html -%}
+  <!-- Meta Title -->
+  <title>
+    {%- if page.url == "/" or page.name == "index.html" -%}
+      {{ site.title }} // {{ site.description }}
+    {%- elsif page.title -%}
+      {{ page.title }} // {{ site.title }}
+    {%- else -%}
+      {{ site.title }}
     {%- endif -%}
+  </title>
+
+  <!-- SEO Plugin -->
+  {%- seo -%}
+
+  <!-- Font & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS -->
+  <link href="/assets/css/output.css" rel="stylesheet">
+
+  <script src="/assets/js/main.js" defer></script>
+
+  <!-- Google Analytics -->
+  {%- if jekyll.environment == 'production' and site.google_analytics -%}
+    {%- include google-analytics.html -%}
+  {%- endif -%}
 </head>

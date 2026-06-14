@@ -1,7 +1,7 @@
 {
-  "name": "priv8car--web",
+  "name": "itulabs",
   "version": "1.0.0",
-  "description": "Priv8Car Website",
+  "description": "Technical sandbox and development hub",
   "scripts": {
     "dev": "tailwindcss -i ./assets/css/input.css -o ./assets/css/output.css --watch",
     "build": "tailwindcss -i ./assets/css/input.css -o ./assets/css/output.css --minify",

@@ -1,75 +1,19 @@
-<!-- Header Top Bar -->
-<div class="bg-gradient-to-r from-byu-navy via-byu-royal to-byu-royal text-white text-center py-3 header-top">
-    <div class="flex items-center justify-center space-x-6 flex-wrap">
-        <span><i data-feather="map-pin" class="inline w-4 h-4 mr-1"></i> Brigham Young University | Provo, Utah</span>
-        <span class="hidden sm:inline ">•</span>
-        <span><i data-feather="home" class="inline w-4 h-4 mr-1"></i> College of Physical and Mathematical Sciences</span>
-    </div>
-</div>
-
 <!-- Header -->
-<header class="text-white py-2 px-4 sm:px-6 md:px-8 lg:px-12 flex justify-between items-center sticky top-0 z-50">
-    <div class="flex items-center space-x-4 flex-1">
-        <!-- BYU Logo -->
-        <img src="{{ '/assets/images/byu-logo.png' | relative_url }}" alt="BYU Cougar Logo" class="h-12 sm:h-16 object-contain">
-        
-        <!-- Yellow Accent Line -->
-        <div class="header-accent hidden md:block"></div>
-        
-        <!-- Logo Text -->
-        <div class="flex flex-col">
-            <h1 class="text-2xl sm:text-3xl font-bold flex items-center space-x-2">
-                <span>BYULabs</span>
-            </h1>
-            <div class="flex items-center space-x-2 mt-1">
-                <span class="text-xs opacity-75 hidden sm:inline">by ItuSebastian</span>
-            </div>
+<header class="container mx-auto px-4 py-5 md:py-6">
+  <div class="flex items-center justify-between max-w-5xl mx-auto">
+      <a href="{{ '/' | relative_url }}" class="text-sm md:text-base tracking-wider font-semibold">
+          <span class="accent-text">ITU</span> // <span class="dark:text-gray-400 light:text-gray-500">LABS</span>
+      </a>
+      <div class="flex items-center gap-3">
+          <a href="https://github.com/BYULabs" target="_blank" rel="noopener noreferrer"
+              class="p-2 rounded-lg dark:bg-gray-800 light:bg-gray-200 hover:dark:bg-gray-700 hover:light:bg-gray-300 transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          </a>
+          <button id="themeToggle" class="p-2 rounded-lg dark:bg-gray-800 light:bg-gray-200 hover:dark:bg-gray-700 hover:light:bg-gray-300 transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" class="hidden light:block w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-sun"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+              <svg viewBox="0 0 24 24" class="hidden dark:block w-5 h-5" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
 
-            <div class="flex items-center space-x-2 mt-1">
-            </div>
-        </div>
-    </div>
-    
-    <!-- Main Navigation -->
-    <nav class="hidden lg:flex items-center space-x-8 flex-1 justify-center px-8">
-        <a href="{{ '/' | relative_url }}" class="nav-link text-white/90 hover:text-yellow-300 transition-colors font-medium">Home</a>
-        <a href="{{ '/projects' | relative_url }}" class="nav-link text-white/90 hover:text-yellow-300 transition-colors font-medium">Projects</a>
-        <a href="{{ '/coursework' | relative_url }}" class="nav-link text-white/90 hover:text-yellow-300 transition-colors font-medium">Coursework</a>
-        <a href="{{ '/resources' | relative_url }}" class="nav-link text-white/90 hover:text-yellow-300 transition-colors font-medium">Resources</a>
-        <div class="w-px h-6 bg-white/20"></div>
-        <a href="https://byu.edu" target="_blank" class="nav-badge hidden 2xl:inline-flex" title="BYU Main Website">
-            <i data-feather="home" class="w-4 h-4"></i>
-            <span>BYU.edu</span>
-        </a>
-        <a href="https://engineering.byu.edu" target="_blank" class="nav-badge hidden 2xl:inline-flex" title="Engineering College">
-            <i data-feather="settings" class="w-4 h-4"></i>
-            <span>Engineering</span>
-        </a>
-    </nav>
-
-    <!-- Right Side Actions -->
-    <div class="flex items-center space-x-4">
-        <a href="https://github.com/BYULabs" target="_blank" class="hidden md:inline-block bg-byu-royal hover:bg-byu-navy text-white px-5 py-2 rounded-full font-semibold transition-all transform hover:scale-105">
-            <i data-feather="github" class="inline w-4 h-4 mr-2"></i>GitHub
-        </a>
-        <button id="themeToggle" class="p-3 rounded-full bg-white/10 hover:bg-white/20 transition-colors">
-            <i data-feather="moon" class="hidden dark:block w-5 h-5"></i>
-            <i data-feather="sun" class="dark:hidden w-5 h-5"></i>
-        </button>
-        <button class="lg:hidden p-2 rounded-lg bg-white/10 hover:bg-white/20" id="mobileMenuBtn">
-            <i data-feather="menu" class="w-6 h-6"></i>
-        </button>
-    </div>
+          </button>
+      </div>
+  </div>
 </header>
-
-<!-- Mobile Menu -->
-<nav id="mobileMenu" class="hidden lg:hidden bg-gradient-to-b from-byu-royal to-byu-navy text-white p-6 space-y-4 border-b border-white/10">
-    <a href="{{ '/' | relative_url }}" class="nav-link block py-2 hover:text-yellow-300 transition-colors"><i data-feather="home" class="inline w-4 h-4 mr-2"></i>Home</a>
-    <a href="{{ '/projects' | relative_url }}" class="nav-link block py-2 hover:text-yellow-300 transition-colors"><i data-feather="rocket" class="inline w-4 h-4 mr-2"></i>Projects</a>
-    <a href="{{ '/coursework' | relative_url }}" class="nav-link block py-2 hover:text-yellow-300 transition-colors"><i data-feather="book" class="inline w-4 h-4 mr-2"></i>Coursework</a>
-    <a href="{{ '/resources' | relative_url }}" class="nav-link block py-2 hover:text-yellow-300 transition-colors"><i data-feather="tool" class="inline w-4 h-4 mr-2"></i>Resources</a>
-    <div class="h-px bg-white/10 my-4"></div>
-    <a href="https://byu.edu" target="_blank" class="block py-2 hover:text-yellow-300 transition-colors"><i data-feather="home" class="inline w-4 h-4 mr-2"></i>BYU Website</a>
-    <a href="https://engineering.byu.edu" target="_blank" class="block py-2 hover:text-yellow-300 transition-colors"><i data-feather="settings" class="inline w-4 h-4 mr-2"></i>Engineering College</a>
-    <a href="https://github.com/BYULabs" target="_blank" class="block py-2 bg-byu-royal text-white px-4 rounded-lg font-semibold hover:bg-byu-navy">GitHub Organization</a>
-</nav>

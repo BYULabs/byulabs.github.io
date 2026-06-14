@@ -1,0 +1,137 @@
+---
+layout: page
+---
+
+<div class="max-w-4xl mx-auto">
+  <!-- Navigation -->
+  <div class="mb-8">
+    <a href="{{ '/blog' | relative_url }}" class="inline-flex items-center text-sm dark:text-gray-400 light:text-gray-600 hover:dark:text-gray-300 hover:light:text-gray-800 transition-colors">
+      <span class="mr-2">←</span>
+      Back to Blog
+    </a>
+  </div>
+
+  <article>
+    <!-- Post Header -->
+    <header class="mb-12">
+      <h1 class="text-3xl md:text-4xl font-bold mb-4">{{ page.title }}</h1>
+      
+      <!-- Post Meta Info -->
+      <div class="flex items-center gap-4 text-sm dark:text-gray-400 light:text-gray-600 mb-6">
+        <time datetime="{{ page.date | date_to_xmlschema }}">
+          {{ page.date | date: "%B %d, %Y" }}
+        </time>
+        {% if page.author %}
+          <span>{{ page.author | default: site.author }}</span>
+        {% endif %}
+        <!-- Reading Time Estimation -->
+        <span>~{% assign word_count = content | strip_html | number_of_words %}{% if word_count < 360 %}1{% else %}{{ word_count | divided_by: 200 }}{% endif %} min read</span>
+      </div>
+
+      <!-- Categories -->
+      {% if page.categories %}
+      <div class="mb-6">
+        {% for category in page.categories %}
+          <a href="{{ site.baseurl }}/categories/{{ category | slugify }}" class="inline-block mr-2 text-xs accent-text hover:opacity-80">
+            #{{ category }}
+          </a>
+        {% endfor %}
+      </div>
+      {% endif %}
+    </header>
+
+    <!-- Featured Image -->
+    {% if page.image %}
+    <div class="mb-8 rounded-lg overflow-hidden">
+      <img src="{{ page.image | relative_url }}" alt="{{ page.title }}" class="w-full h-auto">
+    </div>
+    {% endif %}
+
+    <!-- Post Content -->
+    <div class="article-content dark:text-gray-300 light:text-gray-700 mb-12">
+      {{ content }}
+    </div>
+
+    <!-- Post Tags -->
+    {% if page.tags %}
+    <div class="mb-8 py-6 dark:border-gray-700 light:border-gray-200 border-t border-b">
+      <p class="text-sm dark:text-gray-400 light:text-gray-600 mb-3">Tags:</p>
+      <div class="flex flex-wrap gap-2">
+        {% for tag in page.tags %}
+          <a href="{{ site.baseurl }}/tags/{{ tag | slugify }}" class="text-xs px-3 py-1 dark:bg-gray-800 light:bg-gray-100 rounded-full hover:accent-bg hover:text-white transition-colors">
+            {{ tag }}
+          </a>
+        {% endfor %}
+      </div>
+    </div>
+    {% endif %}
+
+    <!-- Share Buttons -->
+    <div class="dark:bg-gray-800 light:bg-gray-100 rounded-lg p-6 mb-8">
+      <p class="text-sm dark:text-gray-400 light:text-gray-600 mb-3">Share this article:</p>
+      <div class="flex gap-4">
+        <a href="https://twitter.com/intent/tweet?url={{ page.url | absolute_url }}&text={{ page.title }}" target="_blank" rel="noopener noreferrer" 
+           class="text-sm accent-text hover:opacity-80 transition-opacity">
+          Twitter
+        </a>
+        <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ page.url | absolute_url }}" target="_blank" rel="noopener noreferrer"
+           class="text-sm accent-text hover:opacity-80 transition-opacity">
+          LinkedIn
+        </a>
+        <a href="https://www.facebook.com/sharer/sharer.php?u={{ page.url | absolute_url }}" target="_blank" rel="noopener noreferrer"
+           class="text-sm accent-text hover:opacity-80 transition-opacity">
+          Facebook
+        </a>
+      </div>
+    </div>
+
+    <!-- Author Bio -->
+    <div class="dark:bg-gray-800 light:bg-white dark:border-gray-700 light:border-gray-200 border rounded-xl p-6 mb-8">
+      <h3 class="font-bold mb-3">About the Author</h3>
+      <p class="dark:text-gray-300 light:text-gray-600 text-sm mb-4">
+        I'm a web developer with +14 years of experience. I specialize in building web platforms that drive sales and scalable architectures. If you have a project in mind, contact me.
+      </p>
+      <a href="https://twitter.com/itusebastian/" target="_blank" rel="noopener noreferrer" class="text-sm accent-text hover:opacity-80">
+        Connect on Twitter →
+      </a>
+    </div>
+
+    <!-- Related Posts -->
+    {% assign related_posts = site.posts | where_exp: "post", "post.path != page.path" | where_exp: "post", "post.categories contains page.categories[0]" | limit: 3 %}
+    {% if related_posts %}
+    <div class="mb-12">
+      <h2 class="text-2xl font-bold mb-6">Related Articles</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {% for post in related_posts %}
+        <a href="{{ post.url | relative_url }}" class="dark:bg-gray-800 light:bg-white dark:border-gray-700 light:border-gray-200 border rounded-xl p-4 card-hover">
+          {% if post.image %}
+          <div class="mb-3 rounded-lg overflow-hidden h-32 dark:bg-gray-700 light:bg-gray-100">
+            <img src="{{ post.image | relative_url }}" alt="{{ post.title }}" class="w-full h-full object-cover">
+          </div>
+          {% endif %}
+          <h4 class="font-bold text-sm mb-2">{{ post.title }}</h4>
+          <p class="dark:text-gray-400 light:text-gray-600 text-xs">{{ post.date | date: "%B %d, %Y" }}</p>
+        </a>
+        {% endfor %}
+      </div>
+    </div>
+    {% endif %}
+
+    <!-- Navigation -->
+    <div class="flex justify-between items-center pt-8 dark:border-gray-700 light:border-gray-200 border-t">
+      {% if page.previous %}
+      <a href="{{ page.previous.url | relative_url }}" class="text-sm accent-text hover:opacity-80 transition-opacity">
+        ← {{ page.previous.title }}
+      </a>
+      {% else %}
+      <span></span>
+      {% endif %}
+
+      {% if page.next %}
+      <a href="{{ page.next.url | relative_url }}" class="text-sm accent-text hover:opacity-80 transition-opacity text-right">
+        {{ page.next.title }} →
+      </a>
+      {% endif %}
+    </div>
+  </article>
+</div>
