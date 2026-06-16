@@ -1,39 +1,40 @@
-# BYULabs
+# BYU // LABS 🤙
 
-A student-to-engineer journey portfolio and technical sandbox showcasing development work and learning at Brigham Young University (BYU).
+Welcome! I'm **Sebastián Iturralde**, a BYU Computer Science student sharing course labs, coding sandboxes, and side projects. Let's talk clean code or collaborate on assignments!
 
-**Live Site:** https://byulabs.github.io/
+## 🛠️ Tech Stack & Skills
+*   **Backend & Architecture:** PHP, MySQL, Java (OOP), C# (SOLID), Python
+*   **Frontend & Design:** JavaScript (DOM), Tailwind CSS, Jekyll, HTML
+*   **Specialized APIs:** Web Audio API, CRUD / Auth
 
-## Overview
+---
 
-BYULabs is a static website built with Jekyll and styled with Tailwind CSS. It serves as a platform to document the journey from student to professional engineer, featuring project work, technical insights, and development experiments.
+## 🚀 The Sandbox Ecosystem
+A look at my featured side projects and applications:
 
-## Tech Stack
+*   **AniStream** – *Streaming & Media Hub*
+*   **Fabrication Unit** – *Modular, sci-fi-themed JavaScript game featuring Web Audio API and state management.*
+*   **Cuarenta** – *Traditional card game implementation.*
+*   **RelatoCorto.com** – *Short stories and content hosting platform.*
 
-- **Static Site Generator:** [Jekyll](https://jekyllrb.com/) (~4.4.1)
-- **Styling:** [Tailwind CSS](https://tailwindcss.com/) (v3.4.1)
-- **Hosting:** GitHub Pages
-- **Language:** HTML/CSS with Jekyll templates
+---
 
-## Features
+## 📚 BYU Coursework Highlights
 
-- Static site generation with Jekyll
-- Responsive design with Tailwind CSS
-- SEO optimization with jekyll-seo-tag
-- XML sitemap generation with jekyll-sitemap
-- RSS feed support with jekyll-feed
-- Live reload support during development
+### 🖥️ Computer Science & Software Engineering
+*   **[cse210](./cse210)** – C# course repository for BYU-I, featuring 14 console projects focused on OOP principles, SOLID design, and class hierarchies.
+*   **[audiovisual-system-oop](./audiovisual-system-oop)** – Gestor OO de películas, series y documentales (Java).
+*   **[buscaminas-poo](./buscaminas-poo)** – Buscaminas clásico en Java, jugable por terminal.
+*   **[cse111](./cse111) / [cse110](./cse110)** – Python scripts, labs, and automated testing fundamentals.
 
-## Getting Started
+### 🌐 Web Design & Development
+*   **[wdd231](./wdd231)** – Web development curriculum focusing on HTML, CSS, and JavaScript.
+*   **[wdd131](./wdd131)** – Dynamic web fundamentals including DOM manipulation and CSS layouts.
+*   **[simple-cms-php](./simple-cms-php)** – Lightweight PHP/MySQL Content Management System with Role-Based Access Control (RBAC).
 
-### Prerequisites
+---
 
-- Ruby (for Jekyll)
-- Node.js and npm (for Tailwind CSS)
+### 🔗 Quick Links
+[BYU Athletics](https://byucougars.com) · [Pathway Companion](https://byupathway.org) · [Canvas](https://byu.instructure.com) · [Student Portal](https://my.byu.edu)
 
-### Installation
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/BYULabs/byulabs.github.io.git
-   cd byulabs.github.io
+*© 2026 BYU // LABS · Go Cougs! 🤙*
