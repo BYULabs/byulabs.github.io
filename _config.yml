@@ -17,25 +17,24 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-
-title: BYULabs
+title: Sebastián Iturralde
 email: byulabs@itusebastian.com
-description: Sebastián Iturralde | Software Developer Portfolio
+description: BYU Computer Science Portfolio & Labs
 author:
-  name: "Sebastián Iturralde"
-  url: "https://itusebastian.com"
+    name: "Sebastián Iturralde"
+    url: "https://itusebastian.com"
 baseurl: ""
 url: "https://byulabs.github.io"
 
 # Build settings
 sass:
-  load_paths:
-    - _sass
+    load_paths:
+        - _sass
 
 plugins:
-  - jekyll-feed
-  - jekyll-seo-tag
-  - jekyll-sitemap
+    - jekyll-feed
+    - jekyll-seo-tag
+    - jekyll-sitemap
 
 # Exclude from processing.
 # The following items will not be processed, by default.
