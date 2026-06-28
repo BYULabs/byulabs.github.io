@@ -42,6 +42,15 @@ const langColors = {
     'Vim script': '#199f4b',
     'Dockerfile': '#384d54',
     'Makefile': '#427819',
+    
+    // --- Added Languages ---
+    'EJS': '#a31f34',
+    'HTML+EJS': '#a31f34',
+    'Vue': '#41b883',
+    'Svelte': '#ff3e00',
+    'JavaScript React': '#61dafb',
+    'TypeScript React': '#3178c6',
+    'JSON': '#292929'
 };
 
 // State
