@@ -93,6 +93,12 @@ description: "Explore computer science coursework, coding sandboxes, and softwar
             <div class="skeleton h-36 rounded-xl"></div>
         </div>
 
+        <div id="pagination" class="flex items-center justify-center gap-4 mt-8 hidden">
+            <button id="prevBtn" class="px-4 py-2 text-sm rounded-lg border border-gray-700 disabled:opacity-40 disabled:cursor-not-allowed">Prev</button>
+            <span id="pageIndicator" class="text-sm font-medium">Page 1</span>
+            <button id="nextBtn" class="px-4 py-2 text-sm rounded-lg border border-gray-700 disabled:opacity-40 disabled:cursor-not-allowed">Next</button>
+        </div>
+
         <!-- Error State -->
         <div id="errorState" class="hidden">
             <div class="error-state dark:bg-gray-800/30 light:bg-gray-100 border dark:border-gray-700 light:border-gray-200 rounded-xl p-6 text-center">

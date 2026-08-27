@@ -56,6 +56,8 @@ const langColors = {
 // State
 let repos = [];
 let currentSort = 'updated';
+let currentPage = 1;
+const itemsPerPage = 10;
 
 // Fetch repos
 async function fetchRepos() {
@@ -78,8 +80,8 @@ async function fetchRepos() {
     } catch (err) {
         console.error('Failed to fetch repos:', err);
         document.getElementById('repoGrid').classList.add('hidden');
+        document.getElementById('pagination').classList.add('hidden');
         document.getElementById('errorState').classList.remove('hidden');
-        
     }
 }
 
@@ -91,7 +93,7 @@ function updateStats() {
     document.getElementById('totalLangs').textContent = langs.size;
 }
 
-function sortAndRender(sortBy) {
+function sortAndRender(sortBy = currentSort) {
     currentSort = sortBy;
 
     let sorted = [...repos];
@@ -103,10 +105,31 @@ function sortAndRender(sortBy) {
         sorted.sort((a, b) => a.name.localeCompare(b.name));
     }
 
-    // Slice the array to only get the top 10 items after sorting
-    const top10Repos = sorted.slice(0, 10);
+    const totalPages = Math.ceil(sorted.length / itemsPerPage) || 1;
+    if (currentPage > totalPages) currentPage = totalPages;
 
-    renderRepos(top10Repos);
+    const start = (currentPage - 1) * itemsPerPage;
+    const paginatedRepos = sorted.slice(start, start + itemsPerPage);
+
+    renderRepos(paginatedRepos);
+    renderPaginationControls(totalPages);
+}
+
+function renderPaginationControls(totalPages) {
+    const paginationEl = document.getElementById('pagination');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const pageIndicator = document.getElementById('pageIndicator');
+
+    if (totalPages <= 1) {
+        paginationEl.classList.add('hidden');
+        return;
+    }
+
+    paginationEl.classList.remove('hidden');
+    pageIndicator.textContent = `Page ${currentPage} of ${totalPages}`;
+    prevBtn.disabled = currentPage === 1;
+    nextBtn.disabled = currentPage === totalPages;
 }
 
 function timeAgo(dateStr) {
@@ -140,7 +163,6 @@ function renderRepos(sortedRepos) {
                 <p class="text-sm">No public repositories found.</p>
             </div>
         `;
-        
         return;
     }
 
@@ -183,8 +205,6 @@ function renderRepos(sortedRepos) {
 
         grid.appendChild(card);
     });
-
-    
 }
 
 // Sort buttons
@@ -192,8 +212,25 @@ document.querySelectorAll('.sort-btn').forEach(btn => {
     btn.addEventListener('click', () => {
         document.querySelectorAll('.sort-btn').forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
+        currentPage = 1;
         sortAndRender(btn.dataset.sort);
     });
+});
+
+// Pagination Event Listeners
+document.getElementById('prevBtn').addEventListener('click', () => {
+    if (currentPage > 1) {
+        currentPage--;
+        sortAndRender();
+    }
+});
+
+document.getElementById('nextBtn').addEventListener('click', () => {
+    const totalPages = Math.ceil(repos.length / itemsPerPage);
+    if (currentPage < totalPages) {
+        currentPage++;
+        sortAndRender();
+    }
 });
 
 // Scroll fade-in
