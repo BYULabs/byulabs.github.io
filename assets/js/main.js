@@ -67,8 +67,11 @@ async function fetchRepos() {
 
         repos = await response.json();
 
-        // Filter out forks if desired, and sort
-        repos = repos.filter(r => !r.fork);
+        // List the repositories you want to hide
+        const excludedRepos = ['.github', 'byulabs.github.io'];
+
+        // Filter out forks and excluded repositories
+        repos = repos.filter(r => !r.fork && !excludedRepos.includes(r.name));
 
         updateStats();
         sortAndRender(currentSort);
